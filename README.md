@@ -11,13 +11,17 @@
   - Projects should be tagged `projects` and be `featured`
   - Articles should be tagged `articles` and be `featured`
   - The 3 most recent (by creation date) articles & projects will be shown
-- Dedicated Projects, Articles tab
-  - Projects will be loaded by creation date, with `featured` projects first
-  - These should be tagged `projects` and `articles`
+  - These are configurable in package.json
+- Dedicated Projects tab
+  - These should be tagged `projects`
   - Set `/projects` to route to `/tags/projects`
+  - Projects will be loaded by creation date, with `featured` projects first
+  - [Idea] Custom JS-based emoji table of contents at the top. Each emoji links to a project and displays its title.
+- Dedicated Articles tab
+  - These should be tagged `articles`
   - Set `/articles` to route to `/tags/articles`
-- Allow short articles that do not have their own dedicated page
-  - Use `#short` tag
+  - Articles will be loaded by creation date, with `featured` projects first
+  - Use `#short` tag to remove link to dedicated page
 - Dedicated tags category pages (same template as Projects / Articles)
 - LinkedIn and GitHub links
 
@@ -28,6 +32,14 @@ TBD with npm commands and stuff.
 ## Installation
 
 TBD with route setup / .yml stuff
+
+1. [Install Ghost](https://docs.ghost.org/setup/)
+2. Under **Design**: add `Projects` to `/tag/projects/` and `Articles` to `/tag/articles`
+
+   If desired, add `LinkedIn` to LinkedIn url, and `GitHub` to GitHub url.
+
+3. Create a post with tag `#home` which is `featured`. This will be shown on the home page.
+4. Write posts that are tagged `projects` and `articles`!
 
 ## Resources
 
