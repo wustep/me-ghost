@@ -1,6 +1,3 @@
-files:
-  include: "src/assets/css/*.s+(a|c)ss"
-
 options:
   formatter: stylish
   merge-default-rules: false

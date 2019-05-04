@@ -1,10 +1,9 @@
 @charset "utf-8";
 
-@import "../../node_modules/bulma/bulma.sass";
-@import "../../node_modules/bulma/sass/utilities/_all.sass";
-
 @import "bourbon";
-@import "neat";
+
+@import "../../node_modules/bulma/bulma";
+@import "../../node_modules/bulma/sass/utilities/_all";
 
 .kg-image-card {
   // Post image figure

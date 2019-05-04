@@ -27,7 +27,9 @@
 
 ## Development
 
-TBD with npm commands and stuff.
+Use `gulp` to run compile task with Sass, Autoprefixer, and JSHint, watching for changes.
+
+Use `gulp deploy` to recompile stylesheets, create zip file of theme, and gscan to validate.
 
 ## Installation
 
@@ -52,9 +54,9 @@ TBD with route setup / .yml stuff
 
 #### Repos
 
+- [Ghost-Theme-Template](https://github.com/thoughtbot/ghost-theme-template): Template used!
 - [Casper](https://github.com/TryGhost/Casper): Default Ghost theme
 - [Blog](https://github.com/TryGhost/Blog): Official Ghost blog theme
 - [Gulma](https://github.com/simply-fiete/Gulma): Ghost + Bulma theme
 - [Ghost Social Casper](https://github.com/gergelyorosz/GhostSocialCasper)
-- [Ghost-Theme-Template](https://github.com/thoughtbot/ghost-theme-template)
 - [Ghost-Starter-Kit](https://github.com/justinsisley/Ghost-Starter-Kit)
