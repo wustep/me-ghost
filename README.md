@@ -6,14 +6,13 @@
 
 #### Features
 
-- ✔️ Front page with post content, 3 recent projects, and 3 articles
+- ✔️ Front page with post content, 2 recent projects, and 2 articles
   - ✔️ Content from page with URL `home`
     - Better styling
   - ✔️ Projects should be tagged `projects`
   - ✔️ Articles should be tagged `articles`
-  - ✔️ The 2 most recent (by creation date) articles & projects will be shown
+  - ✔️ The 2 most recent (by creation date) articles & projects will be shown, with "Read More" buttons
     - With `featured` prioritized
-  - These numbers are configurable in package.json
 - ✔️ Dedicated Projects tab
   - ✔️ These should be tagged `projects`
   - ✔️ Set `/projects` to route to `/tags/projects`
@@ -21,10 +20,12 @@
     - With `featured` projects first
   - Projects will pop up article in modal.
   - [Idea] Custom JS-based emoji table of contents at the top. Each emoji links to a project and displays its title.
+  - Uses package.json property `posts-per-page` with pagination
 - ✔️ Dedicated Articles tab
   - ✔️ These should be tagged `articles`
   - ✔️ Articles will be loaded by creation date desc
     - With `featured` first
+  - Uses package.json property `posts-per-page` with pagination
 - ✔️ Dedicated tags category pages: `/tag/[tag]`
 - Dynamic navbar
   - ✔️ Based on the items in Settings > Navigation:

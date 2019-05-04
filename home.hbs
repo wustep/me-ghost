@@ -1,8 +1,8 @@
 {{!< default}}
 
 {{#page}}
-<div class="card">
-  <div class="card-content post-content">
+<div class="box">
+  <div class="post-content">
     {{content}}
   </div>
 </div><br>
@@ -12,7 +12,7 @@
 
 <h1 class="title">Projects</h1>
 
-{{#get "posts" filter="tag:projects" limit=3}}
+{{#get "posts" filter="tag:projects" limit=2}}
   {{> "post-card-loop"}}
 {{/get}}
 <a class="button is-primary" href="projects">Read More</a>
@@ -21,7 +21,7 @@
 
 <h1 class="title">Articles</h1>
 
-{{#get "posts" filter="tag:articles" limit=3}}
+{{#get "posts" filter="tag:articles" limit=2}}
   {{> "post-card-loop"}}
 {{/get}}
 <a class="button is-primary" href="articles">Read More</a>

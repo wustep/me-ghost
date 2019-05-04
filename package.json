@@ -40,10 +40,6 @@
     "run-sequence": "^2.2.0"
   },
   "config": {
-    "home": {
-      "project_posts": 3,
-      "article_posts": 3
-    },
     "posts_per_page": 10
   },
   "dependencies": {
