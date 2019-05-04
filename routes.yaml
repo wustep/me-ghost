@@ -1,7 +1,13 @@
 routes:
-  /: home
-  /projects: projects
-  /articles: articles
+  /:
+    data: page.home
+    template: home
+  /projects/:
+    data: tag.projects
+    template: projects
+  /articles/:
+    data: tag.articles
+    template: articles
 
 collections:
   /:
