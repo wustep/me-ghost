@@ -54,9 +54,8 @@ TBD with route setup / .yml stuff
 
 #### Repos
 
-- [Ghost-Theme-Template](https://github.com/thoughtbot/ghost-theme-template): Template used!
+- [Ghost-Theme-Template](https://github.com/thoughtbot/ghost-theme-template)
+- [Gulma](https://github.com/simply-fiete/Gulma): Ghost + Bulma theme
 - [Casper](https://github.com/TryGhost/Casper): Default Ghost theme
 - [Blog](https://github.com/TryGhost/Blog): Official Ghost blog theme
-- [Gulma](https://github.com/simply-fiete/Gulma): Ghost + Bulma theme
 - [Ghost Social Casper](https://github.com/gergelyorosz/GhostSocialCasper)
-- [Ghost-Starter-Kit](https://github.com/justinsisley/Ghost-Starter-Kit)

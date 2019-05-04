@@ -1,4 +1,19 @@
-<header
+<header>
+  <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="{{@site.url}}">
+        {{#if @site.logo}}
+          <img src="{{@site.logo}}" height="28"/>
+        {{else}}
+          <b>{{@blog.title}}</b>
+        {{/if}}
+      </a>
+      {{#if @blog.navigation}}
+          {{navigation}}
+      {{/if}}
+    </div>
+  </nav>
+
   <section class="hero is-info" {{#if @site.cover_image}}
     style="background-image: url({{@site.cover_image}}); background-position: center center;"
     {{/if}}>
