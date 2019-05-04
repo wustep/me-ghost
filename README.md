@@ -17,12 +17,14 @@
 - ✔️ Dedicated Projects tab
   - ✔️ These should be tagged `projects`
   - ✔️ Set `/projects` to route to `/tags/projects`
-  - Projects will be loaded by creation date desc, with `featured` projects first
+  - ✔️ Projects will be loaded by creation date desc
+    - With `featured` projects first
+  - Projects will pop up article in modal.
   - [Idea] Custom JS-based emoji table of contents at the top. Each emoji links to a project and displays its title.
 - ✔️ Dedicated Articles tab
   - ✔️ These should be tagged `articles`
-  - Articles will be loaded by creation date desc, with `featured` first
-  - Use `#short` tag to remove link to dedicated page
+  - ✔️ Articles will be loaded by creation date desc
+    - With `featured` first
 - ✔️ Dedicated tags category pages: `/tag/[tag]`
 - Dynamic navbar
   - ✔️ Based on the items in Settings > Navigation:
@@ -40,12 +42,10 @@ Use `gulp` to run compile task with Sass, Autoprefixer, and JSHint, watching for
 
 Use `gulp deploy` to recompile stylesheets, create zip file of theme, and gscan to validate.
 
-## Installation
+## Setup
 
-TBD with route setup / .yml stuff
-
-1. [Install Ghost](https://docs.ghost.org/setup/), see note below about modifying.
-2. Under **Design**: add `Projects` to `/tag/projects/` and `Articles` to `/tag/articles`
+1. [Install Ghost](https://docs.ghost.org/setup/), see notes below.
+2. Under **Settings -> Navigation**: add `Projects` -> `/tag/projects/` and `Articles` -> `/tag/articles`
 
    If desired, add `LinkedIn` to LinkedIn url, and `GitHub` to GitHub url.
 

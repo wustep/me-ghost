@@ -1,0 +1,25 @@
+{{#foreach posts}}
+  {{#if @first}}
+    <div class="tile is-ancestor is-vertical posts-card-loop">
+  {{/if}}
+
+  {{#if @odd}}
+    <div class="tile is-parent">
+  {{/if}}
+
+
+  <div class="tile is-child post-card-parent">
+    {{> "post-card"}}
+  </div>
+
+  {{#if @even}}
+    </div>
+  {{/if}}
+
+  {{#if @last}}
+    {{#if @odd}}
+      </div>
+    {{/if}}
+    </div>
+  {{/if}}
+{{/foreach}}

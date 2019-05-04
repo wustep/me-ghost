@@ -3,7 +3,5 @@
 {{> "tag-header"}}
 
 {{#get "posts" filter="tag:projects"}}
-  {{#foreach posts}}
-    {{> "post-card"}}
-  {{/foreach}}
+  {{> "post-card-loop"}}
 {{/get}}
