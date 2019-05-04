@@ -2,5 +2,5 @@
 
 node_modules
 
-assets/css/built
+assets/css/*.css
 dist
