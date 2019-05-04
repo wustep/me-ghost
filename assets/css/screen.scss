@@ -70,6 +70,10 @@
 
 /* Bulma overrides */
 
+iframe {
+  height: 100%;
+}
+
 .footer {
   padding: 3rem 1.5rem; /* from: 3rem 1.5rem 6rem */
 }

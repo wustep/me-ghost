@@ -11,7 +11,7 @@
     - Better styling
   - ✔️ Projects should be tagged `projects`
   - ✔️ Articles should be tagged `articles`
-  - ✔️ The 3 most recent (by creation date) articles & projects will be shown
+  - ✔️ The 2 most recent (by creation date) articles & projects will be shown
     - With `featured` prioritized
   - These numbers are configurable in package.json
 - ✔️ Dedicated Projects tab
@@ -47,10 +47,13 @@ Use `gulp deploy` to recompile stylesheets, create zip file of theme, and gscan 
 1. [Install Ghost](https://docs.ghost.org/setup/), see notes below.
 2. Under **Settings -> Navigation**: add `Projects` -> `/tag/projects/` and `Articles` -> `/tag/articles`
 
-   If desired, add `LinkedIn` to LinkedIn url, and `GitHub` to GitHub url.
+   (optional) add `LinkedIn` to LinkedIn url, and `GitHub` to GitHub url.
 
 3. Create a page with URL `/home`. This will be shown on the home page.
 4. Write posts that are tagged `projects` and `articles`! (Not both.)
+5. (optional) Use a service like Typeform to add a "Contact" button to the `home` page
+
+   Edit the button to use Bulma, with class `button` and `is-success` (or [another color](https://bulma.io/documentation/overview/colors/))!
 
 ### Modifications to Ghost
 
