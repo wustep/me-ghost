@@ -4,31 +4,33 @@
 
 ## Features
 
-#### Features planned
+#### Features
 
-- Front page with post content, 3 recent projects, and 3 articles
-  - ✅ Post content should be in a single post tagged `me` and be `featured`
-    - Change this to a Page with internal tag: `#home` (bugged) or url `/`?
+- ✅ Front page with post content, 3 recent projects, and 3 articles
+  - ✅ Content from page with URL `home`
+    - Better styling
   - ✅ Projects should be tagged `projects`
   - ✅ Articles should be tagged `articles`
-  - ✅ The 3 most recent (by creation date) articles & projects will be shown, with `featured` prioritized
+  - ✅ The 3 most recent (by creation date) articles & projects will be shown
+    - With `featured` prioritized
   - These numbers are configurable in package.json
-- Dedicated Projects tab
-  - These should be tagged `projects`
-  - Set `/projects` to route to `/tags/projects`
+- ✅ Dedicated Projects tab
+  - ✅ These should be tagged `projects`
+  - ✅ Set `/projects` to route to `/tags/projects`
   - Projects will be loaded by creation date desc, with `featured` projects first
   - [Idea] Custom JS-based emoji table of contents at the top. Each emoji links to a project and displays its title.
-- Dedicated Articles tab
-  - These should be tagged `articles`
+- ✅ Dedicated Articles tab
+  - ✅ These should be tagged `articles`
   - Articles will be loaded by creation date desc, with `featured` first
   - Use `#short` tag to remove link to dedicated page
-- Dedicated tags category pages: `/tag/[tag]`
+- ✅ Dedicated tags category pages: `/tag/[tag]`
 - Dynamic navbar
   - ✅ Based on the items in Settings > Navigation:
   - ✅ "Home", "Projects", and "Articles" will be on the left side
   - ✅ Any other link will be on the right side
   - ✅ Mobile-friendly dropdown
   - Facebook, Twitter, GitHub, and LinkedIn will have icons!
+- Dedicated post webpages
 - Year-organized URIs: `/[projects|articles]/year/[slug]`
 - ✅ Custom 404 page with 404-porcupine
 
@@ -47,8 +49,8 @@ TBD with route setup / .yml stuff
 
    If desired, add `LinkedIn` to LinkedIn url, and `GitHub` to GitHub url.
 
-3. Create a post with tag `#home` which is `featured`. This will be shown on the home page.
-4. Write posts that are tagged `projects` and `articles`!
+3. Create a page with URL `/home`. This will be shown on the home page.
+4. Write posts that are tagged `projects` and `articles`! (Not both.)
 
 ### Modifications to Ghost
 

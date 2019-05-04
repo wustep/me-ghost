@@ -1,0 +1,30 @@
+{{!< default}}
+
+{{#page}}
+<div class="card">
+  <div class="card-content post-content">
+    {{content}}
+  </div>
+</div><br>
+{{/page}}
+
+<center><h1 class="title">Projects</h1></center><br>
+
+{{#get "posts" filter="tag:projects" limit=3}}
+  <div class="post-feed">
+
+    {{#foreach posts}}
+      {{> "post-card"}}
+    {{/foreach}}
+  </div>
+{{/get}}
+
+<center><h1 class="title">Articles</h1></center><br>
+
+{{#get "posts" filter="tag:articles" limit=3}}
+  <div class="post-feed">
+    {{#foreach posts}}
+      {{> "post-card"}}
+    {{/foreach}}
+  </div>
+{{/get}}
