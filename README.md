@@ -23,7 +23,11 @@
   - Articles will be loaded by creation date, with `featured` projects first
   - Use `#short` tag to remove link to dedicated page
 - Dedicated tags category pages (same template as Projects / Articles)
-- LinkedIn and GitHub links
+- Dynamic navbar
+  - Based on the items in Settings > Navigation:
+  - "Home", "Projects", and "Articles" will be on the left side
+  - Any other link will be on the right side
+  - Facebook, GitHub, and LinkedIn will have icons!
 
 ## Development
 
@@ -35,13 +39,30 @@ Use `gulp deploy` to recompile stylesheets, create zip file of theme, and gscan 
 
 TBD with route setup / .yml stuff
 
-1. [Install Ghost](https://docs.ghost.org/setup/)
+1. [Install Ghost](https://docs.ghost.org/setup/), see note below about modifying.
 2. Under **Design**: add `Projects` to `/tag/projects/` and `Articles` to `/tag/articles`
 
    If desired, add `LinkedIn` to LinkedIn url, and `GitHub` to GitHub url.
 
 3. Create a post with tag `#home` which is `featured`. This will be shown on the home page.
 4. Write posts that are tagged `projects` and `articles`!
+
+### Modifications to Ghost
+
+Some minor mods were made to Ghost, particularly:
+
+#### \#has tag for labels
+
+In `has.js`, add `label` to validAttrs and add to `checks` object (line 140ish):
+
+```
+label: function() {
+  return (
+    (attrs.label && evaluateTagList(attrs.label, [self.label], true)) ||
+    false
+  );
+},
+```
 
 ## Resources
 
@@ -52,10 +73,9 @@ TBD with route setup / .yml stuff
 - [SCSS](https://sass-lang.com/guide)
 - [Handlebars](https://handlebarsjs.com/)
 
-#### Repos
+#### Templates
 
-- [Ghost-Theme-Template](https://github.com/thoughtbot/ghost-theme-template)
+- [Ghost-Theme-Template](https://github.com/thoughtbot/ghost-theme-template): Starting templates
 - [Gulma](https://github.com/simply-fiete/Gulma): Ghost + Bulma theme
 - [Casper](https://github.com/TryGhost/Casper): Default Ghost theme
 - [Blog](https://github.com/TryGhost/Blog): Official Ghost blog theme
-- [Ghost Social Casper](https://github.com/gergelyorosz/GhostSocialCasper)
