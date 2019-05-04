@@ -1,12 +1,16 @@
 <header
-  {{#if @site.cover_image}}
-    style="background-image: url({{@site.cover_image}})"
-  {{/if}}>
-  {{#if @site.logo}}
-    <a href="{{@site.url}}">
-      <img src="{{@site.logo}}" alt="{{t "Logo"}}">
-    </a>
-  {{/if}}
-  <h1 class="title">Title</h1>
-  <h2 class="subtitle">Subtitle</h2>
+  <section class="hero is-info" {{#if @site.cover_image}}
+    style="background-image: url({{@site.cover_image}}); background-position: center center;"
+    {{/if}}>
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">
+          {{@site.title}}
+        </h1>
+        <h2 class="subtitle">
+          {{@site.description}}
+        </h2>
+      </div>
+    </div>
+  </section>
 </header>
