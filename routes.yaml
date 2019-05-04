@@ -1,0 +1,13 @@
+routes:
+  /: home
+  /projects: projects
+  /articles: articles
+
+collections:
+  /:
+    permalink: /{slug}/
+    template: index
+
+taxonomies:
+  tag: /tag/{slug}/
+  author: /author/{slug}/

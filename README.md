@@ -7,27 +7,29 @@
 #### Features planned
 
 - Front page with post content, 3 recent projects, and 3 articles
-  - Post content should be in a single post tagged `#home` and be `featured`
-  - Projects should be tagged `projects` and be `featured`
-  - Articles should be tagged `articles` and be `featured`
-  - The 3 most recent (by creation date) articles & projects will be shown
-  - These are configurable in package.json
+  - ✅ Post content should be in a single post tagged `me` and be `featured`
+    - Change this to a Page with internal tag: `#home` (bugged) or url `/`?
+  - ✅ Projects should be tagged `projects`
+  - ✅ Articles should be tagged `articles`
+  - ✅ The 3 most recent (by creation date) articles & projects will be shown, with `featured` prioritized
+  - These numbers are configurable in package.json
 - Dedicated Projects tab
   - These should be tagged `projects`
   - Set `/projects` to route to `/tags/projects`
-  - Projects will be loaded by creation date, with `featured` projects first
+  - Projects will be loaded by creation date desc, with `featured` projects first
   - [Idea] Custom JS-based emoji table of contents at the top. Each emoji links to a project and displays its title.
 - Dedicated Articles tab
-  - These should be tagged `articles`
-  - Set `/articles` to route to `/tags/articles`
-  - Articles will be loaded by creation date, with `featured` projects first
+  - Hides all tagged `projects`, `#hide`
+  - Articles will be loaded by creation date desc, with `featured` first
   - Use `#short` tag to remove link to dedicated page
 - Dedicated tags category pages (same template as Projects / Articles)
 - Dynamic navbar
-  - Based on the items in Settings > Navigation:
-  - "Home", "Projects", and "Articles" will be on the left side
-  - Any other link will be on the right side
-  - Facebook, GitHub, and LinkedIn will have icons!
+  - ✅ Based on the items in Settings > Navigation:
+  - ✅ "Home", "Projects", and "Articles" will be on the left side
+  - ✅ Any other link will be on the right side
+  - ✅ Mobile-friendly dropdown
+  - Facebook, Twitter, GitHub, and LinkedIn will have icons!
+- Year-organized URIs: `/[projects|articles]/year/[slug]`
 
 ## Development
 
@@ -53,7 +55,7 @@ Some minor mods were made to Ghost, particularly:
 
 #### \#has tag for labels
 
-In `has.js`, add `label` to validAttrs and add to `checks` object (line 140ish):
+In `has.js`, add `label` to `validAttrs` and add to `checks` object (line 140ish):
 
 ```
 label: function() {
@@ -63,6 +65,10 @@ label: function() {
   );
 },
 ```
+
+#### Routes
+
+Replace your `routes.yaml` with the one in this directory.
 
 ## Resources
 
