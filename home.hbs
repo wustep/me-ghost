@@ -8,14 +8,20 @@
 </div><br>
 {{/page}}
 
-<center><h1 class="title">Projects</h1></center><br>
+<hr>
+
+<h1 class="title">Projects</h1>
 
 {{#get "posts" filter="tag:projects" limit=3}}
   {{> "post-card-loop"}}
 {{/get}}
+<a class="button is-primary" href="projects">Read More</a>
 
-<center><h1 class="title">Articles</h1></center><br>
+<hr>
+
+<h1 class="title">Articles</h1>
 
 {{#get "posts" filter="tag:articles" limit=3}}
   {{> "post-card-loop"}}
 {{/get}}
+<a class="button is-primary" href="articles">Read More</a>

@@ -67,3 +67,9 @@
   -webkit-transform: translate3D(0, -1px, 0) scale(1.04);
   transform: translate3D(0, -1px, 0) scale(1.04);
 }
+
+/* Bulma overrides */
+
+.footer {
+  padding: 3rem 1.5rem; /* from: 3rem 1.5rem 6rem */
+}
