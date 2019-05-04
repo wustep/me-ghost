@@ -1,0 +1,9 @@
+{{!< default}}
+
+{{> "tag-header"}}
+
+{{#get "posts" filter="tag:articles"}}
+  {{#foreach posts}}
+    {{> "post-card"}}
+  {{/foreach}}
+{{/get}}

@@ -19,10 +19,10 @@
   - Projects will be loaded by creation date desc, with `featured` projects first
   - [Idea] Custom JS-based emoji table of contents at the top. Each emoji links to a project and displays its title.
 - Dedicated Articles tab
-  - Hides all tagged `projects`, `#hide`
+  - These should be tagged `articles`
   - Articles will be loaded by creation date desc, with `featured` first
   - Use `#short` tag to remove link to dedicated page
-- Dedicated tags category pages (same template as Projects / Articles)
+- Dedicated tags category pages: `/tag/[tag]`
 - Dynamic navbar
   - ✅ Based on the items in Settings > Navigation:
   - ✅ "Home", "Projects", and "Articles" will be on the left side

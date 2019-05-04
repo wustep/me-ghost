@@ -1,0 +1,11 @@
+<center>
+  <h1 class="title">{{tag.name}}</h1>
+  <h2 class="subtitle">
+    {{#if tag.description}}
+      {{tag.description}}
+    {{else}}
+      A collection of {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}
+    {{/if}}
+  </h2>
+</center>
+<br>
