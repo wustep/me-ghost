@@ -30,6 +30,7 @@
   - ✅ Mobile-friendly dropdown
   - Facebook, Twitter, GitHub, and LinkedIn will have icons!
 - Year-organized URIs: `/[projects|articles]/year/[slug]`
+- ✅ Custom 404 page with 404-porcupine
 
 ## Development
 
