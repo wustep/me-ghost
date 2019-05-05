@@ -9,12 +9,12 @@
 - ✔️ Front page with post content, 2 recent projects, and 2 articles
   - ✔️ Content from page with URL `home`
     - Better styling
-  - ✔️ Projects should be tagged `projects`
-  - ✔️ Articles should be tagged `articles`
+  - ✔️ Projects should be tagged `Projects`
+  - ✔️ Articles should be tagged `Articles`
   - ✔️ The 2 most recent (by creation date) articles & projects will be shown, with "Read More" buttons
     - With `featured` prioritized
 - ✔️ Dedicated Projects tab
-  - ✔️ These should be tagged `projects`
+  - ✔️ These should be tagged `Projects`
   - ✔️ Set `/projects` to route to `/tags/projects`
   - ✔️ Projects will be loaded by creation date desc
     - With `featured` projects first
@@ -22,7 +22,7 @@
   - [Idea] Custom JS-based emoji table of contents at the top. Each emoji links to a project and displays its title.
   - Uses package.json property `posts-per-page` with pagination
 - ✔️ Dedicated Articles tab
-  - ✔️ These should be tagged `articles`
+  - ✔️ These should be tagged `Articles`
   - ✔️ Articles will be loaded by creation date desc
     - With `featured` first
   - Uses package.json property `posts-per-page` with pagination
@@ -51,7 +51,7 @@ Use `gulp deploy` to recompile stylesheets, create zip file of theme, and gscan 
    (optional) add `LinkedIn` to LinkedIn url, and `GitHub` to GitHub url.
 
 3. Create a page with URL `/home`. This will be shown on the home page.
-4. Write posts that are tagged `projects` and `articles`! (Not both.)
+4. Write posts that are tagged `Projects` and `Articles`! (Not both.)
 5. (optional) Use a service like Typeform to add a "Contact" button to the `home` page
 
    Edit the button to use Bulma, with class `button` and `is-success` (or [another color](https://bulma.io/documentation/overview/colors/))!
