@@ -1,11 +1,14 @@
 <div class="card post-card">
-  <header class="card-header post-card-header">
-    <h6 class="subtitle is-7">
-      {{date published_at format="DD MMM YYYY"}}
-    </h6>
-    <h4 class="title is-4">{{title}}</h4>
-  </header>
-  <div class="card-content post-content">
-    <p>{{excerpt words="33"}}</p>
-  </div>
-</div><br>
+  <a href={{url}} class="post-card-link">
+    <header class="card-header post-card-header">
+      <h6 class="subtitle is-7 post-card-published">
+        {{date published_at format="DD MMM YYYY"}}
+      </h6>
+      <h4 class="title is-4">{{title}}</h4>
+    </header>
+    <div class="card-content post-card-content">
+      <p>{{excerpt words="33"}}</p>
+    </div>
+  </a>
+</div>
+<br>

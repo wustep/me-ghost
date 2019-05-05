@@ -61,6 +61,10 @@
   height: 100%;
 }
 
+.post-card-link {
+  color: #4a4a4a;
+}
+
 .post-card:hover {
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
@@ -68,7 +72,22 @@
   transform: translate3D(0, -1px, 0) scale(1.04);
 }
 
+/* Post page */
+
+.avatar-wrapper svg {
+  margin: 0;
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background-color: black;
+}
+
 /* Bulma overrides */
+
+.page-content p:not([class]):not(:empty),
+.post-content p:not([class]):not(:empty) {
+  margin: 0 0 1.5em 0;
+}
 
 iframe {
   height: 100%;

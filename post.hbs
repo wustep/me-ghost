@@ -1,5 +1,37 @@
 {{!< default}}
 
-{{> "site-header"}}
+{{#post}}
 
-Hello world!
+<article class="post-full">
+
+  <header class="post-full-header">
+    <section class="post-full-meta">
+      <time class="post-full-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMMM YYYY"}}</time>
+      {{#primary_tag}}
+      <span class="date-divider">/</span> <a href="{{url}}">{{name}}</a>
+      {{/primary_tag}}
+    </section>
+    <h1 class="post-full-title">{{title}}</h1>
+  </header>
+
+  {{#if feature_image}}
+  <figure class="post-full-image">
+    <img
+    src="{{feature_image}}"
+    alt="{{title}}"
+    />
+  </figure>
+  {{/if}}
+
+  <section class="post-full-content">
+    <div class="post-content">
+      {{content}}
+    </div>
+  </section>
+
+  <footer class="post-full-footer">
+    {{> "byline"}}
+  </footer>
+</article>
+
+{{/post}}
