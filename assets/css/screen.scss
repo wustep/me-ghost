@@ -5,6 +5,8 @@
 @import "../../node_modules/bulma/bulma";
 @import "../../node_modules/bulma/sass/utilities/_all";
 
+/*  */
+
 .kg-image-card {
   // Post image figure
 }
@@ -86,12 +88,79 @@
   background-color: black;
 }
 
-/* Bulma overrides */
+/*
+Bulma overrides -- from Casper theme
+":not([class]):not(:empty)" is added to hit only these elements with no other class (e.g. from the editor)
+*/
+
+h1:not([class]):not(:empty),
+h2:not([class]):not(:empty),
+h3:not([class]):not(:empty),
+h4:not([class]):not(:empty),
+h5:not([class]):not(:empty),
+h6:not([class]):not(:empty) {
+  margin-top: 0;
+  line-height: 1.15;
+  font-weight: 700;
+  text-rendering: optimizeLegibility;
+}
+
+h1:not([class]):not(:empty) {
+  margin: 0 0 0.5em 0;
+  font-size: 5rem;
+  font-weight: 700;
+}
+@media (max-width: 500px) {
+  h1:not([class]):not(:empty) {
+    font-size: 2.2rem;
+  }
+}
+
+h2:not([class]):not(:empty) {
+  margin: 1.5em 0 0.5em 0;
+  font-size: 2rem;
+}
+@media (max-width: 500px) {
+  h2:not([class]):not(:empty) {
+    font-size: 1.8rem;
+  }
+}
+
+h3:not([class]):not(:empty) {
+  margin: 1.5em 0 0.5em 0;
+  font-size: 1.8rem;
+  /* font-weight: 500; */
+}
+@media (max-width: 500px) {
+  h3:not([class]):not(:empty) {
+    font-size: 1.7rem;
+  }
+}
+
+h4:not([class]):not(:empty) {
+  margin: 1.5em 0 0.5em 0;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+h5:not([class]):not(:empty) {
+  margin: 1.5em 0 0.5em 0;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+h6:not([class]):not(:empty) {
+  margin: 1.5em 0 0.5em 0;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
 
 .page-content p:not([class]):not(:empty),
 .post-content p:not([class]):not(:empty) {
   margin: 0 0 1.5em 0;
 }
+
+/* Bulma overides -- custom */
 
 iframe {
   height: 100%;

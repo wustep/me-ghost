@@ -8,7 +8,6 @@
 
 - ✔️ Front page with post content, 2 recent projects, and 2 articles
   - ✔️ Content from page with URL `home`
-    - Better styling
   - ✔️ Projects should be tagged `Projects`
   - ✔️ Articles should be tagged `Articles`
   - ✔️ The 2 most recent (by creation date) articles & projects will be shown, with "Read More" buttons
@@ -18,8 +17,8 @@
   - ✔️ Set `/projects` to route to `/tags/projects`
   - ✔️ Projects will be loaded by creation date desc
     - With `featured` projects first
-  - Projects will pop up article in modal.
-  - [Idea] Custom JS-based emoji table of contents at the top. Each emoji links to a project and displays its title.
+  - Projects will pop up article by modal
+  - Filtering by tag (e.g. `Java`, `Tutorial`)
   - Uses package.json property `posts-per-page` with pagination
 - ✔️ Dedicated Articles tab
   - ✔️ These should be tagged `Articles`
@@ -27,15 +26,24 @@
     - With `featured` first
   - Uses package.json property `posts-per-page` with pagination
 - ✔️ Dedicated tags category pages: `/tag/[tag]`
-- Dynamic navbar
+  - And author: `/author/[author]`
+  - Uses package.json property `posts-per-page`
+- ✔️ Dynamic navigation bar
   - ✔️ Based on the items in Settings > Navigation:
   - ✔️ "Home", "Projects", and "Articles" will be on the left side
   - ✔️ Any other link will be on the right side
   - ✔️ Mobile-friendly dropdown
   - Facebook, Twitter, GitHub, and LinkedIn will have icons!
-- Dedicated post webpages
-- Year-organized URIs: `/[projects|articles]/year/[slug]`
+- ✔️ Dedicated post webpages
+  - Proper formatting--match editor styles
+    - ✔️ Headings, links, paragraphs, bold, italics
+    - Pictures, blockquotes, code blocks
+    - Responsive feature images
+  - ✔️ Single-author & multi-author byline
+    - Better styling
+- Year-organized URIs? `/[projects|articles]/year/[slug]`
 - ✔️ Custom 404 page with 404-porcupine
+- Fork into generic Bulma + Ghost theme
 
 ## Development
 

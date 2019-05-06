@@ -8,18 +8,15 @@
 </div><br>
 {{/page}}
 
-<h1 class="title">Projects</h1>
-
 {{#get "posts" filter="tag:projects" limit=2}}
+  <h1 class="title">Projects</h1>
   {{> "post-card-loop"}}
+  <a class="button is-primary" href="projects">Read More</a>
+  <hr>
 {{/get}}
-<a class="button is-primary" href="projects">Read More</a>
-
-<hr>
-
-<h1 class="title">Articles</h1>
 
 {{#get "posts" filter="tag:articles" limit=2}}
+  <h1 class="title">Articles</h1>
   {{> "post-card-loop"}}
+  <a class="button is-primary" href="articles">Read More</a>
 {{/get}}
-<a class="button is-primary" href="articles">Read More</a>
