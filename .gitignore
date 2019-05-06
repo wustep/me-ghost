@@ -1,6 +1,11 @@
+# System
 .DS_Store
 
+# Node.js
 node_modules
 
+# Compiled CSS files
 assets/css/*.css
-dist
+
+# Packaged theme
+me.zip

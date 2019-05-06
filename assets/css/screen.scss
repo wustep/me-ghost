@@ -1,44 +1,3 @@
-@charset "utf-8";
-
-@import "bourbon";
-
-@import "../../node_modules/bulma/bulma";
-@import "../../node_modules/bulma/sass/utilities/_all";
-
-/*  */
-
-.kg-image-card {
-  // Post image figure
-}
-
-.kg-width-wide {
-  // Wide post figure
-}
-
-.kg-width-full {
-  // Full width post figure
-}
-
-.kg-image {
-  // Post image
-}
-
-.kg-embed-card {
-  // Post embeded iframe content
-}
-
-.kg-gallery-container {
-  // Post gallery container
-}
-
-.kg-gallery-row {
-  // Post gallery row
-}
-
-.kg-gallery-image {
-  // Post gallery image
-}
-
 /* Post Cards */
 
 .post-card-header {
@@ -88,10 +47,233 @@
   background-color: black;
 }
 
+/* Ghost Koenig styles -- from Casper unless commented out */
+
+.post-content {
+  display: flex;
+  font-size: 1.1em;
+  /* align-items: center; */
+  flex-direction: column;
+}
+
+.post-template .post-content > p:first-child {
+  font-size: 1.25em;
+  line-height: 1.5em;
+}
+
+.post-full-content .kg-image {
+  max-width: 100%;
+}
+
+/* Preventing full-width image overlap with post image.  */
+.post-full-image + .post-full-content .kg-content *:first-child .kg-image {
+  width: 100%;
+}
+
+.post-full-content .kg-width-wide .kg-image {
+  max-width: 1040px;
+}
+
+.post-full-content .kg-width-full .kg-image {
+  max-width: 100vw;
+}
+
+.post-full-content figure {
+  margin: 1.5em 0 3em;
+}
+
+.post-full-content figure img {
+  margin: 0;
+}
+
+.post-full-content figcaption {
+  margin: 1em 0 0;
+  font-size: 80%;
+  line-height: 1.6em;
+  text-align: center;
+}
+
+.kg-width-full figcaption {
+  padding: 0 1.5em;
+}
+
+.kg-embed-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.kg-embed-card .fluid-width-video-wrapper {
+  margin: 0;
+}
+
+@media (max-width: 1040px) {
+  .post-full-content .kg-width-full .kg-image {
+    width: 100vw;
+  }
+}
+
+.kg-gallery-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 1040px;
+  width: 100vw;
+}
+
+.kg-gallery-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.kg-gallery-image img {
+  display: block;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.kg-gallery-row:not(:first-of-type) {
+  margin: 0.75em 0 0 0;
+}
+
+.kg-gallery-image:not(:first-of-type) {
+  margin: 0 0 0 0.75em;
+}
+
+.kg-gallery-card + .kg-image-card.kg-width-wide,
+.kg-gallery-card + .kg-gallery-card,
+.kg-image-card.kg-width-wide + .kg-gallery-card,
+.kg-image-card.kg-width-wide + .kg-image-card.kg-width-wide {
+  margin: -2.25em 0 3em;
+}
+
+/* keep existing <pre> styles for code cards with captions */
+.kg-code-card {
+  min-width: 100%;
+}
+
+.kg-code-card pre {
+  margin: 0;
+}
+.kg-image-card {
+  // Post image figure
+}
+
+.kg-width-wide {
+  // Wide post figure
+}
+
+.kg-width-full {
+  // Full width post figure
+}
+
+.kg-image {
+  // Post image
+}
+
+.kg-embed-card {
+  // Post embeded iframe content
+}
+
+.kg-gallery-container {
+  // Post gallery container
+}
+
+.kg-gallery-row {
+  // Post gallery row
+}
+
+.kg-gallery-image {
+  // Post gallery image
+}
+
 /*
 Bulma overrides -- from Casper theme
 ":not([class]):not(:empty)" is added to hit only these elements with no other class (e.g. from the editor)
 */
+
+.post-full-content iframe {
+  margin: 0 auto !important;
+}
+
+.post-full-content blockquote {
+  margin: 0 0 1.5em;
+  padding: 0 1.5em;
+  border-left: #3eb0ef 3px solid;
+}
+
+.post-full-content blockquote p {
+  margin: 0 0 1em 0;
+  color: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  font-style: italic;
+}
+
+.post-full-content blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+.post-full-content code {
+  padding: 0 5px 2px;
+  font-size: 0.8em;
+  line-height: 1em;
+  font-weight: 400 !important;
+  background: var(--whitegrey);
+  border-radius: 3px;
+}
+
+.post-full-content p code {
+  word-break: break-all;
+}
+
+.post-full-content pre {
+  overflow-x: auto;
+  margin: 1.5em 0 3em;
+  padding: 20px;
+  max-width: 100%;
+  border: color(var(--darkgrey) l(-10%)) 1px solid;
+  color: var(--whitegrey);
+  font-size: 1.4rem;
+  line-height: 1.5em;
+  background: color(var(--darkgrey) l(-3%));
+  border-radius: 5px;
+}
+
+.post-full-content pre code {
+  padding: 0;
+  font-size: inherit;
+  line-height: inherit;
+  background: transparent;
+}
+
+.post-full-content pre code :not(span) {
+  color: inherit;
+}
+
+.post-full-content .fluid-width-video-wrapper {
+  margin: 1.5em 0 3em;
+}
+
+.post-full-content hr {
+  margin: 4vw 0;
+}
+
+.post-full-content hr:after {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  display: block;
+  margin-left: -10px;
+  width: 1px;
+  height: 30px;
+  background: color(var(--lightgrey) l(+10%));
+  box-shadow: #fff 0 0 0 5px;
+  transform: rotate(45deg);
+}
 
 h1:not([class]):not(:empty),
 h2:not([class]):not(:empty),
@@ -158,14 +340,4 @@ h6:not([class]):not(:empty) {
 .page-content p:not([class]):not(:empty),
 .post-content p:not([class]):not(:empty) {
   margin: 0 0 1.5em 0;
-}
-
-/* Bulma overides -- custom */
-
-iframe {
-  height: 100%;
-}
-
-.footer {
-  padding: 3rem 1.5rem; /* from: 3rem 1.5rem 6rem */
 }

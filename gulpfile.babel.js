@@ -1,5 +1,9 @@
-/* Gulp file revised from:
-https://github.com/thoughtbot/ghost-theme-template/blob/master/gulpfile.babel.js */
+/*
+Gulp file revised from ghost-theme-template:
+https://github.com/thoughtbot/ghost-theme-template/blob/master/gulpfile.babel.js
+- Use /assets/css/ and /assets/js/ folders
+- Only compile app.scss to css
+*/
 
 "use strict";
 
@@ -21,6 +25,7 @@ import zip from "gulp-zip";
 
 const paths = {
   scss: "./assets/css/**/*.scss",
+  scssApp: "./assets/css/app.scss",
   css: "./assets/css/",
   js: "./assets/js/**/*.js"
 };
@@ -34,7 +39,7 @@ const levels = {
 
 gulp.task("sass", () =>
   gulp
-    .src(paths.scss)
+    .src(paths.scssApp)
     .pipe(
       sass({
         sourcemaps: true,
