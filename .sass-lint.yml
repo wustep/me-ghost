@@ -1,3 +1,9 @@
+# sass-lint config
+# slightly modified from github.com/thoughtbot/ghost-theme-template
+
+files:
+  include: "/assets/css/*.scss"
+
 options:
   formatter: stylish
   merge-default-rules: false

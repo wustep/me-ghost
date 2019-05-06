@@ -4,8 +4,6 @@
 
 ## Features
 
-#### Features
-
 - ✔️ Front page with post content, 2 recent projects, and 2 articles
   - ✔️ Content from page with URL `home`
   - ✔️ Projects should be tagged `Projects`
@@ -44,33 +42,55 @@
 - Year-organized URIs? `/[projects|articles]/year/[slug]`
 - ✔️ Custom 404 page with 404-porcupine
 - Fork into generic Bulma + Ghost theme
+- Build Tools
+  - ✔️ `gulp` for development and `gulp deploy` for deployment
+  - ✔️ Compile SCSS to CSS
+  - ✔️ JSHint (error-checking) and Sass-lint (style-checking)
+  - Minify css and JavaScript
 
 ## Development
 
-Use `gulp` to run compile task with Sass, Autoprefixer, and JSHint, watching for changes.
+- Install gulp globally with `npm install -g gulp`.
 
-Use `gulp deploy` to recompile stylesheets, create zip file of theme, and gscan to validate.
+- `gulp`: run compile task with Sass, Autoprefixer, and JSHint, watching for changes
+
+  - Ghost reloads `.hbs` changes by default, but new partials will require a `ghost restart`
+
+- `gulp deploy`: recompile stylesheets, create theme `.zip`, and uses `gscan` to validate
 
 ## Setup
 
-1. [Install Ghost](https://docs.ghost.org/setup/), see notes below.
-2. Under **Settings -> Navigation**: add `Projects` -> `/tag/projects/` and `Articles` -> `/tag/articles`
+0. [Install Ghost](https://docs.ghost.org/setup/) and complete modifications below.
 
-   (optional) add `LinkedIn` to LinkedIn url, and `GitHub` to GitHub url.
+1. Clone this repo to `/content/themes`, then use `gulp` or use `gulp deploy` and upload zip file to **Settings -> Design**.
 
-3. Create a page with URL `/home`. This will be shown on the home page.
-4. Write posts that are tagged `Projects` and `Articles`! (Not both.)
-5. (optional) Use a service like Typeform to add a "Contact" button to the `home` page
+1. Under **Settings -> Navigation**: add:
+
+```
+Home -> /
+Projects -> /tag/projects/
+Articles -> /tag/articles/
+```
+
+3. (optional) In **Navigation**, add `LinkedIn` to your LinkedIn, and `GitHub` to your GitHub url.
+
+4. Create a **page** with URL `/home`. This will be shown on the home page.
+
+5. Write **posts** that are tagged `Projects` and `Articles`! (Not both.)
+
+6. (optional) Use a service like Typeform to add a "Contact" button to the `home` page
 
    Edit the button to use Bulma, with class `button` and `is-success` (or [another color](https://bulma.io/documentation/overview/colors/))!
 
 ### Modifications to Ghost
 
-Some minor mods were made to Ghost, particularly:
+Some minor mods were made to the Ghost code, particularly:
 
-#### \#has tag for labels
+#### 1. \#has tag for labels
 
-In `has.js`, add `label` to `validAttrs` and add to `checks` object (line 140ish):
+This is used for the navigation bar, to have `Home`, `Projects`, and `Articles` be on the left-aligned and any other link to be right-aligned.
+
+- In `has.js`, add `label` to `validAttrs` and add to `checks` object (line 140ish):
 
 ```
 label: function() {
@@ -81,9 +101,11 @@ label: function() {
 },
 ```
 
-#### Routes
+#### 2. Routes
 
-Replace your `routes.yaml` with the one in this directory.
+Routes were modified to change `tag/projects` -> `projects` and `tag/articles` -> `articles` and have the user-created page `/home` -> `/`.
+
+- Replace your `content/settings/routes.yaml` with the `routes.yaml` in this repository, modifying as desired
 
 ## Resources
 
