@@ -26,23 +26,26 @@
   - ✔️ Articles are routed to `/articles/{slug}`
   - Loads `featured` first
   - Uses package.json property `posts-per-page` with pagination
+- ✔️ Ideas tab: links to a page called `ideas`
 - ✔️ Posts that are not primarily tagged `articles` or `projects` will be routed to `/`
 - ✔️ Tags category pages: `/tag/[tag]`
+  - Seems broken for non-project and non-articles :'(
   - And author: `/author/[author]`
   - Uses package.json property `posts-per-page`
 - ✔️ Dynamic navigation bar
   - ✔️ Based on the items in Settings > Navigation:
-  - ✔️ "Home", "Projects", and "Articles" will be on the left side
+  - ✔️ "Home", "Projects", "Articles", and "Ideas" will be on the left side
   - ✔️ Any other link will be on the right side
   - ✔️ Mobile-friendly dropdown
   - Facebook, Twitter, GitHub, and LinkedIn will have icons!
 - ✔️ Dedicated post webpages
   - Proper formatting--match editor styles
-    - ✔️ Headings, links, paragraphs, bold, italics
-    - Pictures, blockquotes, code blocks
+    - ✔️ Headings, links, paragraphs, bold, italics, blockquotes
+    - Pictures, code blocks
     - Responsive feature images
   - ✔️ Single-author & multi-author byline
     - Better styling
+  - Syntax highlighting for programming code blocks
 - ✔️ Custom 404 page with 404-porcupine
 - Build tools
   - ✔️ `gulp` for development and `gulp deploy` for deployment
@@ -71,9 +74,10 @@
 
 ```
 Home -> /
-Projects -> /tag/projects/
-Articles -> /tag/articles/
+Projects -> /projects/
+Articles -> /articles/
 (optional)
+Ideas -> /ideas/
 LinkedIn -> [your LinkedIn]
 GitHub -> [your GitHub]
 ```
@@ -85,6 +89,8 @@ GitHub -> [your GitHub]
 5. (optional) Use a service like Typeform to add a "Contact" button to the `home` page
 
    Edit the button to use Bulma, with class `button` and `is-success` (or [another color](https://bulma.io/documentation/overview/colors/))!
+
+6. (optional) Add an Ideas **page** with URL `/ideas`. Write some ideas here!
 
 ### Modifications to Ghost
 
