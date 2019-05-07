@@ -13,6 +13,13 @@ collections:
   /:
     permalink: /{slug}/
     template: index
+    filter: primary_tag:-projects+primary_tag:-articles
+  /projects/:
+    permalink: /projects/{slug}/
+    filter: primary_tag:projects
+  /articles/:
+    permalink: /articles/{slug}/
+    filter: primary_tag:articles
 
 taxonomies:
   tag: /tag/{slug}/

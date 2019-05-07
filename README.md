@@ -12,18 +12,21 @@
   - ✔️ Uses 2 most recent projects and articles
     - Loads `featured` prioritized
 - ✔️ Projects tab
-  - ✔️ These should be tagged `Projects`
+  - ✔️ These should be tagged `Projects` first
   - ✔️ Set `/projects` to route to `/tags/projects`
   - ✔️ Projects will be loaded by creation date desc
+  - ✔️ Projects are routed to `/projects/{slug}`
   - Loads `featured` projects first
   - Projects will pop up article by modal
   - Filtering by tag (e.g. `Java`, `Tutorial`)
   - Uses package.json property `posts-per-page` with pagination
 - ✔️ Articles tab
-  - ✔️ These should be tagged `Articles`
+  - ✔️ These should be tagged `Articles` first
   - ✔️ Articles will be loaded by creation date desc
+  - ✔️ Articles are routed to `/articles/{slug}`
   - Loads `featured` first
   - Uses package.json property `posts-per-page` with pagination
+- ✔️ Posts that are not primarily tagged `articles` or `projects` will be routed to `/`
 - ✔️ Tags category pages: `/tag/[tag]`
   - And author: `/author/[author]`
   - Uses package.json property `posts-per-page`
@@ -40,7 +43,6 @@
     - Responsive feature images
   - ✔️ Single-author & multi-author byline
     - Better styling
-- Year-organized URIs? `/[projects|articles]/year/[slug]`
 - ✔️ Custom 404 page with 404-porcupine
 - Build tools
   - ✔️ `gulp` for development and `gulp deploy` for deployment
