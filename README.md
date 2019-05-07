@@ -4,26 +4,27 @@
 
 ## Features
 
-- ✔️ Front page with post content, 2 recent projects, and 2 articles
-  - ✔️ Content from page with URL `home`
-  - ✔️ Projects should be tagged `Projects`
-  - ✔️ Articles should be tagged `Articles`
-  - ✔️ The 2 most recent (by creation date) articles & projects will be shown, with "Read More" buttons
-    - With `featured` prioritized
-- ✔️ Dedicated Projects tab
+- ✔️ Home page
+  - ✔️ Content is used from page with URL `home`
+  - ✔️ Projects are tagged `Projects`
+  - ✔️ Articles are tagged `Articles`
+  - ✔️ "Read More" buttons linking to pages
+  - ✔️ Uses 2 most recent projects and articles
+    - Loads `featured` prioritized
+- ✔️ Projects tab
   - ✔️ These should be tagged `Projects`
   - ✔️ Set `/projects` to route to `/tags/projects`
   - ✔️ Projects will be loaded by creation date desc
-    - With `featured` projects first
+  - Loads `featured` projects first
   - Projects will pop up article by modal
   - Filtering by tag (e.g. `Java`, `Tutorial`)
   - Uses package.json property `posts-per-page` with pagination
-- ✔️ Dedicated Articles tab
+- ✔️ Articles tab
   - ✔️ These should be tagged `Articles`
   - ✔️ Articles will be loaded by creation date desc
-    - With `featured` first
+  - Loads `featured` first
   - Uses package.json property `posts-per-page` with pagination
-- ✔️ Dedicated tags category pages: `/tag/[tag]`
+- ✔️ Tags category pages: `/tag/[tag]`
   - And author: `/author/[author]`
   - Uses package.json property `posts-per-page`
 - ✔️ Dynamic navigation bar
@@ -41,16 +42,16 @@
     - Better styling
 - Year-organized URIs? `/[projects|articles]/year/[slug]`
 - ✔️ Custom 404 page with 404-porcupine
-- Fork into generic Bulma + Ghost theme
-- Build Tools
+- Build tools
   - ✔️ `gulp` for development and `gulp deploy` for deployment
   - ✔️ Compile SCSS to CSS
   - ✔️ JSHint (error-checking) and Sass-lint (style-checking)
-  - Minify css and JavaScript
+  - Minify CSS and JavaScript
+- Fork into generic Bulma + Ghost theme
 
 ## Development
 
-- Install gulp globally with `npm install -g gulp`.
+- With npm installed, install gulp globally with `npm install -g gulp`.
 
 - `gulp`: run compile task with Sass, Autoprefixer, and JSHint, watching for changes
 
@@ -62,7 +63,7 @@
 
 0. [Install Ghost](https://docs.ghost.org/setup/) and complete modifications below.
 
-1. Clone this repo to `/content/themes`, then use `gulp` or use `gulp deploy` and upload zip file to **Settings -> Design**.
+1. Clone this repo to `/content/themes`, then (`npm install`) and (use `gulp`) or (`gulp deploy` and upload zip file to **Settings -> Design**).
 
 1. Under **Settings -> Navigation**: add:
 
@@ -70,15 +71,16 @@
 Home -> /
 Projects -> /tag/projects/
 Articles -> /tag/articles/
+(optional)
+LinkedIn -> [your LinkedIn]
+GitHub -> [your GitHub]
 ```
 
-3. (optional) In **Navigation**, add `LinkedIn` to your LinkedIn, and `GitHub` to your GitHub url.
+3. Create a **page** with URL `/home`. This will be shown on the home page.
 
-4. Create a **page** with URL `/home`. This will be shown on the home page.
+4. Write **posts** that are tagged `Projects` and `Articles`! (Not both.)
 
-5. Write **posts** that are tagged `Projects` and `Articles`! (Not both.)
-
-6. (optional) Use a service like Typeform to add a "Contact" button to the `home` page
+5. (optional) Use a service like Typeform to add a "Contact" button to the `home` page
 
    Edit the button to use Bulma, with class `button` and `is-success` (or [another color](https://bulma.io/documentation/overview/colors/))!
 
