@@ -19,6 +19,8 @@
   - Loads `featured` projects first
   - Filtering by tag (e.g. `Java`, `Tutorial`) JS
   - Uses package.json property `posts-per-page` with pagination
+  - ✔️ Hide day for datetime posted
+    - Add special way to have date range instead of regular dates..
 - ✔️ Articles tab
   - ✔️ These should be posts tagged `Articles` first
   - ✔️ Articles will be loaded by creation date desc
@@ -30,6 +32,7 @@
   - ✔️ Notes will be loaded by creation date desc
   - ✔️ Notes are routed to `/articles/{slug}`
   - Loads `featured` first
+  - ✔️ Hide day for datetime posted
   - Uses package.json property `posts-per-page` with pagination
 - Projects/Articles/Notes tab use scripts/body from pages named those!
 - ✔️ Posts that are not primarily tagged `Articles` or `Projects` or `Notes` will be routed to `/`

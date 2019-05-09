@@ -6,7 +6,12 @@
 
   <header class="post-header">
     <section class="post-meta">
-      <time class="post-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMMM YYYY"}}</time>
+      {{! Hide day for Notes and Projects}}
+      {{#has tag="Notes, Projects"}}
+        <time class="post-meta-date" datetime="{{date format="YYYY-MM"}}">{{date format="MMMM YYYY"}}</time>
+      {{else}}
+        <time class="post-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMMM YYYY"}}</time>
+      {{/has}}
     </section>
     <h1 class="title is-1">{{title}}</h1>
     <p>
