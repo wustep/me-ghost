@@ -78,19 +78,19 @@
   max-width: 100vw;
 }
 
-.post-full-content figure {
-  margin: 1.5em 0 3em;
-}
-
-.post-full-content figure img {
-  margin: 0;
-}
-
-.post-full-content figcaption {
-  margin: 1em 0 0;
-  font-size: 80%;
-  line-height: 1.6em;
-  text-align: center;
+.post-full-content {
+  figure {
+    margin: 1.5em 0 3em;
+  }
+  figure img {
+    margin: 0;
+  }
+  figcaption {
+    margin: 1em 0 0;
+    font-size: 80%;
+    line-height: 1.6em;
+    text-align: center;
+  }
 }
 
 .kg-width-full figcaption {
@@ -195,108 +195,68 @@ Bulma overrides -- from Casper theme
 ":not([class]):not(:empty)" is added to hit only these elements with no other class (e.g. from the editor)
 */
 
-.post-full-content iframe {
-  margin: 0 auto !important;
-}
+.post-full-content {
+  iframe {
+    margin: 0 auto !important;
+  }
 
-.post-full-content blockquote {
-  // Use Bulma's Message Body: https://bulma.io/documentation/components/message/#message-body-only
-  @extend .message;
-  @extend .message-body;
-  border-color: $info;
-}
+  blockquote {
+    // Use Bulma's Message Body: https://bulma.io/documentation/components/message/#message-body-only
+    @extend .message;
+    @extend .message-body;
+    border-color: $info;
+  }
 
-.post-full-content pre code {
-  padding: 0;
-  font-size: inherit;
-  line-height: inherit;
-  background: transparent;
-}
+  pre {
+    code {
+      padding: 0;
+      font-size: inherit;
+      line-height: inherit;
+      background: transparent;
+    }
+  }
 
-.post-full-content code {
-  padding: 0 5px 2px;
-  font-size: 0.8em;
-  line-height: 1em;
-  font-weight: 400 !important;
-  background: #e5eff5;
-  border-radius: 3px;
-}
-
-.post-full-content pre code :not(span) {
-  color: inherit;
-}
-
-.post-full-content .fluid-width-video-wrapper {
-  margin: 1.5em 0 3em;
-}
-
-.post-full-content hr {
-  margin: 4vw 0;
-}
-
-h1:not([class]):not(:empty),
-h2:not([class]):not(:empty),
-h3:not([class]):not(:empty),
-h4:not([class]):not(:empty),
-h5:not([class]):not(:empty),
-h6:not([class]):not(:empty) {
-  margin-top: 0;
-  line-height: 1.15;
-  font-weight: 700;
-  text-rendering: optimizeLegibility;
-}
-
-h1:not([class]):not(:empty) {
-  margin: 0 0 0.5em 0;
-  font-size: 5rem;
-  font-weight: 700;
-}
-@media (max-width: 500px) {
-  h1:not([class]):not(:empty) {
-    font-size: 2.2rem;
+  code {
+    padding: 0 5px 2px;
+    font-size: 0.8em;
+    line-height: 1em;
+    font-weight: 400 !important;
+    background: #e5eff5;
+    border-radius: 3px;
   }
 }
 
-h2:not([class]):not(:empty) {
-  margin: 1.5em 0 0.5em 0;
-  font-size: 2rem;
-}
-@media (max-width: 500px) {
-  h2:not([class]):not(:empty) {
-    font-size: 1.8rem;
-  }
+h1:not([class]) {
+  @extend .title;
+  @extend .is-2;
 }
 
-h3:not([class]):not(:empty) {
-  margin: 1.5em 0 0.5em 0;
-  font-size: 1.8rem;
-  /* font-weight: 500; */
-}
-@media (max-width: 500px) {
-  h3:not([class]):not(:empty) {
-    font-size: 1.7rem;
-  }
+h2:not([class]) {
+  @extend .title;
+  @extend .is-3;
 }
 
-h4:not([class]):not(:empty) {
-  margin: 1.5em 0 0.5em 0;
-  font-size: 1.6rem;
-  font-weight: 500;
+h3:not([class]) {
+  @extend .title;
+  @extend .is-4;
 }
 
-h5:not([class]):not(:empty) {
-  margin: 1.5em 0 0.5em 0;
-  font-size: 1.4rem;
-  font-weight: 500;
+h4:not([class]) {
+  @extend .title;
+  @extend .is-5;
 }
 
-h6:not([class]):not(:empty) {
-  margin: 1.5em 0 0.5em 0;
-  font-size: 1.4rem;
-  font-weight: 500;
+h5:not([class]) {
+  @extend .title;
+  @extend .is-6;
 }
 
-.page-content p:not([class]):not(:empty),
-.post-content p:not([class]):not(:empty) {
+h6:not([class]) {
+  @extend .title;
+  @extend .is-7;
+}
+
+.page-content p:not([class]),
+.post-content p:not([class]) {
   margin: 0 0 1.5em 0;
 }
