@@ -77,6 +77,8 @@
 
 - `gulp deploy`: recompile stylesheets, create theme `.zip`, and uses `gscan` to validate
 
+- To run ghost: `ghost start`, `ghost restart`, or `ghost run [session-name] --development` for logs
+
 ## Setup
 
 0. [Install Ghost](https://docs.ghost.org/setup/) and complete modifications below.

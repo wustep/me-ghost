@@ -234,20 +234,6 @@ Bulma overrides -- from Casper theme
   margin: 4vw 0;
 }
 
-.post-full-content hr:after {
-  content: "";
-  position: absolute;
-  top: -15px;
-  left: 50%;
-  display: block;
-  margin-left: -10px;
-  width: 1px;
-  height: 30px;
-  background: color(var(--lightgrey) l(+10%));
-  box-shadow: #fff 0 0 0 5px;
-  transform: rotate(45deg);
-}
-
 h1:not([class]):not(:empty),
 h2:not([class]):not(:empty),
 h3:not([class]):not(:empty),
