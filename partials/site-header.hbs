@@ -5,7 +5,7 @@
         {{#if @site.logo}}
           <img src="{{@site.logo}}" height="28"/>
         {{else}}
-          <b>{{@blog.title}}</b>
+          <b>{{@site.title}}</b>
         {{/if}}
       </a>
 
@@ -17,12 +17,12 @@
     </div>
     <div class="navbar-menu" id="navbar-links">
       <div class="navbar-start">
-        {{#if @blog.navigation}}
+        {{#if @site.navigation}}
             {{navigation internal=true}}
         {{/if}}
       </div>
       <div class="navbar-end">
-        {{#if @blog.navigation}}
+        {{#if @site.navigation}}
             {{navigation internal=false}}
         {{/if}}
       </div>
