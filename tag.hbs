@@ -2,4 +2,6 @@
 
 {{> "tag-header"}}
 
-{{> "post-card-loop"}}
+{{#get "posts" filter="tag:{{tag.slug}}"}}
+  {{> "post-card-loop"}}
+{{/get}}
