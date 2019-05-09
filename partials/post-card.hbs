@@ -2,11 +2,7 @@
   <a href={{url}} class="post-card-link">
     <header class="card-header post-card-header">
       <h6 class="subtitle is-7 post-card-published">
-        {{#if hide-date-day}}
-            {{date published_at format="MMM YYYY"}}
-        {{else}}
-          {{date published_at format="DD MMM YYYY"}}
-        {{/if}}
+        {{date published_at format="DD MMM YYYY"}}
       </h6>
       <h4 class="title is-4">{{title}}</h4>
     </header>

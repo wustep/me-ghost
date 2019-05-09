@@ -4,13 +4,13 @@ routes:
     template: home
   /projects/:
     data: tag.projects
-    template: projects
+    template: tag
   /articles/:
     data: tag.articles
-    template: articles
+    template: tag
   /notes/:
     data: tag.notes
-    template: notes
+    template: tag
 
 collections:
   /:
