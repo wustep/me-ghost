@@ -3,5 +3,5 @@
 {{> "tag-header"}}
 
 {{#get "posts" filter="tag:notes"}}
-  {{> "post-card-loop"}}
+  {{> "post-card-loop" hide-date-day=true}}
 {{/get}}

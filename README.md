@@ -31,10 +31,11 @@
   - ✔️ Notes are routed to `/articles/{slug}`
   - Loads `featured` first
   - Uses package.json property `posts-per-page` with pagination
+- Projects/Articles/Notes tab use scripts/body from pages named those!
 - ✔️ Posts that are not primarily tagged `Articles` or `Projects` or `Notes` will be routed to `/`
 - ✔️ Tags category pages: `/tag/[tag]`
   - And author: `/author/[author]`
-  - Fix pluralization error saying `A collection of`
+  - Fix pluralization error saying `A collection of` for `projects, notes, articles`
   - Uses package.json property `posts-per-page`
 - ✔️ Dynamic navigation bar
   - ✔️ Based on the items in Settings > Navigation:
@@ -51,9 +52,9 @@
   - ✔️ Single-author & multi-author byline
     - Better styling
   - Syntax highlighting for programming code blocks?
-- ✔️ Post cards (for tag-based pages)
-  - ✔️ with title, excerpt
-  - add: feature image, tags
+- ✔️ Post cards
+  - ✔️ with title, excerpt, tags
+  - add: feature image
 - ✔️ Custom 404 page with 404-porcupine
 - ✔️ Build tools
   - ✔️ `gulp` for development and `gulp deploy` for deployment

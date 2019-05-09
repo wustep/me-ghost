@@ -7,11 +7,18 @@
   <header class="post-header">
     <section class="post-meta">
       <time class="post-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMMM YYYY"}}</time>
-      {{#primary_tag}}
-      <span class="date-divider">/</span> <a href="{{url}}">{{name}}</a>
-      {{/primary_tag}}
     </section>
     <h1 class="title is-1">{{title}}</h1>
+    <p>
+      {{! Give primary-tag different Bulma (is-primary) styling than others (is-link)}}
+      {{#foreach tags}}
+        {{#if @first}}
+          <a class="tag is-primary is-normal" href="{{url}}">{{name}}</a>
+        {{else}}
+          <a class="tag is-link is-normal" href="{{url}}">{{name}}</a>
+        {{/if}}
+      {{/foreach}}
+    </p>
   </header><br>
 
   {{#if feature_image}}
