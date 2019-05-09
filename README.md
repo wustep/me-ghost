@@ -12,45 +12,54 @@
   - ✔️ Uses 2 most recent projects and articles
     - Loads `featured` prioritized
 - ✔️ Projects tab
-  - ✔️ These should be tagged `Projects` first
+  - ✔️ These should be posts tagged `Projects` first
   - ✔️ Set `/projects` to route to `/tags/projects`
   - ✔️ Projects will be loaded by creation date desc
   - ✔️ Projects are routed to `/projects/{slug}`
   - Loads `featured` projects first
-  - Projects will pop up article by modal
-  - Filtering by tag (e.g. `Java`, `Tutorial`)
+  - Filtering by tag (e.g. `Java`, `Tutorial`) JS
   - Uses package.json property `posts-per-page` with pagination
 - ✔️ Articles tab
-  - ✔️ These should be tagged `Articles` first
+  - ✔️ These should be posts tagged `Articles` first
   - ✔️ Articles will be loaded by creation date desc
   - ✔️ Articles are routed to `/articles/{slug}`
   - Loads `featured` first
   - Uses package.json property `posts-per-page` with pagination
-- ✔️ Ideas tab: links to a page called `ideas`
-- ✔️ Posts that are not primarily tagged `articles` or `projects` will be routed to `/`
+- ✔️ Notes tab
+  - ✔️ These should be posts tagged `Notes` first
+  - ✔️ Notes will be loaded by creation date desc
+  - ✔️ Notes are routed to `/articles/{slug}`
+  - Loads `featured` first
+  - Uses package.json property `posts-per-page` with pagination
+- ✔️ Posts that are not primarily tagged `Articles` or `Projects` or `Notes` will be routed to `/`
 - ✔️ Tags category pages: `/tag/[tag]`
-  - Seems broken for non-project and non-articles :'(
   - And author: `/author/[author]`
+  - Fix pluralization error saying `A collection of`
   - Uses package.json property `posts-per-page`
 - ✔️ Dynamic navigation bar
   - ✔️ Based on the items in Settings > Navigation:
-  - ✔️ "Home", "Projects", "Articles", and "Ideas" will be on the left side
+  - ✔️ "Home", "Projects", "Articles", and "Notes" will be on the left side
   - ✔️ Any other link will be on the right side
   - ✔️ Mobile-friendly dropdown
   - Facebook, Twitter, GitHub, and LinkedIn will have icons!
 - ✔️ Dedicated post webpages
   - Proper formatting--match editor styles
     - ✔️ Headings, links, paragraphs, bold, italics, blockquotes
+      - Headings need better styling
     - Pictures, code blocks
     - Responsive feature images
   - ✔️ Single-author & multi-author byline
     - Better styling
-  - Syntax highlighting for programming code blocks
+  - Syntax highlighting for programming code blocks?
+- ✔️ Post cards (for tag-based pages)
+  - ✔️ with title, excerpt
+  - add: feature image, tags
 - ✔️ Custom 404 page with 404-porcupine
-- Build tools
+- ✔️ Build tools
   - ✔️ `gulp` for development and `gulp deploy` for deployment
   - ✔️ Compile SCSS to CSS
   - ✔️ JSHint (error-checking) and Sass-lint (style-checking)
+    - Fix these errors!
   - Minify CSS and JavaScript
 - Fork into generic Bulma + Ghost theme
 
@@ -76,21 +85,19 @@
 Home -> /
 Projects -> /projects/
 Articles -> /articles/
+Notes -> /notes/
 (optional)
-Ideas -> /ideas/
 LinkedIn -> [your LinkedIn]
 GitHub -> [your GitHub]
 ```
 
 3. Create a **page** with URL `/home`. This will be shown on the home page.
 
-4. Write **posts** that are tagged `Projects` and `Articles`! (Not both.)
+4. Write **posts** that are tagged `Projects`, `Articles`, or `Notes`!
 
 5. (optional) Use a service like Typeform to add a "Contact" button to the `home` page
 
    Edit the button to use Bulma, with class `button` and `is-success` (or [another color](https://bulma.io/documentation/overview/colors/))!
-
-6. (optional) Add an Ideas **page** with URL `/ideas`. Write some ideas here!
 
 ### Modifications to Ghost
 
@@ -113,9 +120,15 @@ label: function() {
 
 #### 2. Routes
 
-Routes were modified to change `tag/projects` -> `projects` and `tag/articles` -> `articles` and have the user-created page `/home` -> `/`.
+Routes were modified to change `tag/projects` -> `projects`, `tag/articles` -> `articles`, and `tag/notes` -> `notes` and have the user-created page `/home` -> `/`.
 
 - Replace your `content/settings/routes.yaml` with the `routes.yaml` in this repository, modifying as desired
+
+### Other Optional Changes
+
+#### Add more internal pages
+
+By default, only "Home", "Projects", "Articles", and "Ideas" are in the left side of the nav. To add more internal pages to the nav bar, edit `partials/navigation.hbs` and make sure the new label is listed in the `#has` and `^has` statements.
 
 ## Resources
 

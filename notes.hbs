@@ -1,0 +1,7 @@
+{{!< default}}
+
+{{> "tag-header"}}
+
+{{#get "posts" filter="tag:notes"}}
+  {{> "post-card-loop"}}
+{{/get}}

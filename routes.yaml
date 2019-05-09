@@ -8,18 +8,24 @@ routes:
   /articles/:
     data: tag.articles
     template: articles
+  /notes/:
+    data: tag.notes
+    template: notes
 
 collections:
   /:
     permalink: /{slug}/
     template: index
-    filter: primary_tag:-projects+primary_tag:-articles
+    filter: primary_tag:-projects+primary_tag:-articles+primary_tag:-notes
   /projects/:
     permalink: /projects/{slug}/
     filter: primary_tag:projects
   /articles/:
     permalink: /articles/{slug}/
     filter: primary_tag:articles
+  /notes/:
+    permalink: /notes/{slug}/
+    filter: primary_tag:notes
 
 taxonomies:
   tag: /tag/{slug}/
