@@ -1,22 +1,26 @@
 {{!< default}}
 
-{{#page}}
-<div class="box">
-  <div class="page-content">
-    {{content}}
-  </div>
-</div><br>
-{{/page}}
+<div class="container">
+  
+  {{#page}}
+  <div class="box">
+    <div class="page-content">
+      {{content}}
+    </div>
+  </div><br>
+  {{/page}}
 
-{{#get "posts" filter="tag:projects" limit=2}}
-  <h1 class="title">Projects</h1>
-  {{> "post-card-loop"}}
-  <a class="button is-link" href="projects">Read More</a>
-  <hr>
-{{/get}}
+  {{#get "posts" filter="tag:projects" limit=2}}
+    <h1 class="title">Projects</h1>
+    {{> "post-card-loop"}}
+    <a class="button is-link" href="projects">Read More</a>
+    <hr>
+  {{/get}}
 
-{{#get "posts" filter="tag:articles" limit=2}}
-  <h1 class="title">Articles</h1>
-  {{> "post-card-loop"}}
-  <a class="button is-link" href="articles">Read More</a>
-{{/get}}
+  {{#get "posts" filter="tag:articles" limit=2}}
+    <h1 class="title">Articles</h1>
+    {{> "post-card-loop"}}
+    <a class="button is-link" href="articles">Read More</a>
+  {{/get}}
+
+</div>

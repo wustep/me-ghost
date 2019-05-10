@@ -2,45 +2,48 @@
 
 {{#post}}
 
-<article class="post">
-  <header class="post-header">
-    <section class="post-meta">
-      {{! Hide day for Notes and Projects}}
-      {{#has tag="Notes, Projects"}}
-        <time class="post-meta-date" datetime="{{date format="YYYY-MM"}}">{{date format="MMMM YYYY"}}</time>
-      {{else}}
-        <time class="post-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMMM YYYY"}}</time>
-      {{/has}}
-    </section>
-    <h1 class="title is-1">{{title}}</h1>
-    <p>
-      {{! Give primary-tag different Bulma (is-primary) styling than others (is-link)}}
-      {{#foreach tags}}
-        {{#if @first}}
-          <a class="tag is-link is-normal" href="{{url}}">{{name}}</a>
-        {{else}}
-          <a class="tag is-info is-normal" href="{{url}}">{{name}}</a>
-        {{/if}}
-      {{/foreach}}
-    </p>
-  </header><br>
+<div class="box">
+  <div class="container post-container">
+    <article class="post">
+      <header class="post-header">
+        <section class="post-meta">
+          {{! Hide day for Notes and Projects}}
+          {{#has tag="Notes, Projects"}}
+            <time class="post-meta-date" datetime="{{date format="YYYY-MM"}}">{{date format="MMMM YYYY"}}</time>
+          {{else}}
+            <time class="post-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMMM YYYY"}}</time>
+          {{/has}}
+        </section>
+        <h1 class="title is-1">{{title}}</h1>
+        <p>
+          {{! Give primary-tag different Bulma (is-primary) styling than others (is-link)}}
+          {{#foreach tags}}
+            {{#if @first}}
+              <a class="tag is-link is-normal" href="{{url}}">{{name}}</a>
+            {{else}}
+              <a class="tag is-info is-normal" href="{{url}}">{{name}}</a>
+            {{/if}}
+          {{/foreach}}
+        </p>
+      </header><br>
 
-  {{#if feature_image}}
-  <figure class="post-image">
-    <img
-    src="{{feature_image}}"
-    alt="{{title}}"
-    />
-  </figure>
-  {{/if}}
+      {{#if feature_image}}
+      <figure class="post-image">
+        <img
+        src="{{feature_image}}"
+        alt="{{title}}"
+        />
+      </figure>
+      {{/if}}
 
-  <section class="post-content">
-    {{content}}
-  </section>
+      <section class="post-content">
+        {{content}}
+      </section>
 
-  <footer class="post-footer">
-    {{> "byline"}}
-  </footer>
-</article>
-
+      <footer class="post-footer">
+        {{> "byline"}}
+      </footer>
+    </article>
+  </div>
+</div>
 {{/post}}

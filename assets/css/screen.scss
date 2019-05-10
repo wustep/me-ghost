@@ -50,16 +50,22 @@
 }
 
 /*
-  Post Page
+  Post/Page Content
   Some styles from Ghost Koenig Styles from Casper:
   https://github.com/TryGhost/Casper/blob/master/assets/css/screen.css#L1835
 */
+
+.post-container {
+  max-width: 890px;
+  padding: 1rem;
+}
 
 .post-header {
   text-align: center;
 }
 
-.post-content {
+.post-content,
+.page-content {
   display: flex;
   font-size: 1.1em;
   flex-direction: column;
@@ -72,14 +78,6 @@
   p:not([class]),
   p:not([class]) {
     margin: 0 0 1.5em 0;
-  }
-
-  figure {
-    margin: 1.5em 0 3em;
-  }
-
-  figure img {
-    margin: 0;
   }
 
   figcaption {
@@ -117,6 +115,41 @@
     background: #e5eff5;
     border-radius: 3px;
   }
+
+  /*
+  Bulma overrides -- from Casper theme
+  ":not([class]):not(:empty)" is added to hit only these elements with no other class (e.g. from the editor)
+  */
+
+  h1:not([class]) {
+    @extend .title;
+    @extend .is-2;
+  }
+
+  h2:not([class]) {
+    @extend .title;
+    @extend .is-3;
+  }
+
+  h3:not([class]) {
+    @extend .title;
+    @extend .is-4;
+  }
+
+  h4:not([class]) {
+    @extend .title;
+    @extend .is-5;
+  }
+
+  h5:not([class]) {
+    @extend .title;
+    @extend .is-6;
+  }
+
+  h6:not([class]) {
+    @extend .title;
+    @extend .is-7;
+  }
 }
 
 .avatar-wrapper {
@@ -127,39 +160,4 @@
     border-radius: 50%;
     background-color: black;
   }
-}
-
-/*
-Bulma overrides -- from Casper theme
-":not([class]):not(:empty)" is added to hit only these elements with no other class (e.g. from the editor)
-*/
-
-h1:not([class]) {
-  @extend .title;
-  @extend .is-2;
-}
-
-h2:not([class]) {
-  @extend .title;
-  @extend .is-3;
-}
-
-h3:not([class]) {
-  @extend .title;
-  @extend .is-4;
-}
-
-h4:not([class]) {
-  @extend .title;
-  @extend .is-5;
-}
-
-h5:not([class]) {
-  @extend .title;
-  @extend .is-6;
-}
-
-h6:not([class]) {
-  @extend .title;
-  @extend .is-7;
 }
