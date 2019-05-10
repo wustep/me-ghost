@@ -58,6 +58,8 @@
 - ✔️ Post cards
   - ✔️ with title, excerpt, tags
   - add: feature image
+  - ✔️ Author byline
+    - with Multi-author support
 - ✔️ Custom 404 page with 404-porcupine
 - ✔️ Build tools
   - ✔️ `gulp` for development and `gulp deploy` for deployment

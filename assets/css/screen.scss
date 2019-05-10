@@ -33,6 +33,10 @@
     }
   }
 
+  .post-card-link {
+    color: $body-color;
+  }
+
   header {
     padding: 10px 15px;
     display: block;
@@ -43,10 +47,6 @@
       color: $card-header-color;
     }
   }
-}
-
-.post-card-link {
-  color: #4a4a4a;
 }
 
 /*
@@ -96,6 +96,7 @@
     @extend .message;
     @extend .message-body;
     border-color: $info;
+    font-style: italic;
   }
 
   pre {
@@ -152,12 +153,19 @@
   }
 }
 
-.avatar-wrapper {
-  svg {
-    margin: 0;
-    width: 88px;
-    height: 88px;
-    border-radius: 50%;
-    background-color: black;
+.author-card {
+  .avatar-wrapper {
+    svg {
+      border-radius: 50%;
+      background-color: $black;
+    }
+  }
+
+  .media-content {
+    .author-card-name {
+      margin-bottom: 0.2em;
+    }
+
+    margin: auto 1em;
   }
 }

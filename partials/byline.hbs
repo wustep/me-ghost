@@ -1,22 +1,28 @@
 {{#primary_author}}
 
-<section class="author-card">
-    {{#if profile_image}}
-        <img class="author-profile-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
-    {{else}}
-        <span class="avatar-wrapper">{{> "icons/avatar"}}</span>
-    {{/if}}
-    <section class="author-card-content">
-        <h4 class="author-card-name"><a href="{{url}}">{{name}}</a></h4>
-        {{#if bio}}
-            <p>{{bio}}</p>
+<section class="media author-card">
+  <figure class="media-left">
+    <p class="image is-64x64 is-rounded">
+      <a href="{{url}}">
+        {{#if profile_image}}
+            <img class="author-profile-image is-rounded" src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
         {{else}}
-            <p>Read <a href="{{url}}">more posts</a> by this author.</p>
+            <span class="avatar-wrapper">{{> "icons/avatar"}}</span>
         {{/if}}
-    </section>
+        </a>
+    </p>
+  </figure>
+
+  <div class="media-content">
+    <div class="content">
+      <h4 class="author-card-name">{{name}}</h4>
+      {{#if bio}}
+          {{bio}}
+      {{else}}
+          Read <a href="{{url}}">more posts</a> by this author.
+      {{/if}}
+    </div>
+  </div>
 </section>
-<div class="post-full-footer-right">
-    <a class="author-card-button" href="{{url}}">Read More</a>
-</div>
 
 {{/primary_author}}
