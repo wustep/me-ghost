@@ -1,6 +1,17 @@
+/* Header */
+
+.site-header {
+  background-color: $site-header-background-color;
+
+  .title,
+  .subtitle {
+    color: $site-header-color;
+  }
+}
+
 /* Post Cards */
 
-.posts-card-loop > .tile {
+.posts-card-row {
   padding: 0;
 }
 
@@ -13,11 +24,13 @@
   height: 100%;
 
   &:hover {
-    /* Casper */
-    -webkit-transition: all 0.4s ease;
+    /* Casper card magnify */
     transition: all 0.4s ease;
-    -webkit-transform: translate3D(0, -1px, 0) scale(1.04);
-    transform: translate3D(0, -1px, 0) scale(1.04);
+    transform: translate3D(0, -1px, 0) scale(1.02);
+
+    header {
+      background-color: $card-header-hover-background-color;
+    }
   }
 
   header {
@@ -30,181 +43,52 @@
       color: $card-header-color;
     }
   }
-
-  &:hover {
-    header {
-      background-color: $card-header-hover-background-color;
-    }
-  }
 }
 
 .post-card-link {
   color: #4a4a4a;
 }
 
-/* Post page */
+/*
+  Post Page
+  Some styles from Ghost Koenig Styles from Casper:
+  https://github.com/TryGhost/Casper/blob/master/assets/css/screen.css#L1835
+*/
 
 .post-header {
   text-align: center;
 }
 
-.avatar-wrapper svg {
-  margin: 0;
-  width: 88px;
-  height: 88px;
-  border-radius: 50%;
-  background-color: black;
-}
-
-/* Ghost Koenig styles -- from Casper unless commented out */
-
 .post-content {
   display: flex;
   font-size: 1.1em;
-  /* align-items: center; */
   flex-direction: column;
-}
 
-.post-template .post-content > p:first-child {
-  font-size: 1.25em;
-  line-height: 1.5em;
-}
+  p:first-child {
+    font-size: 1.25em;
+    line-height: 1.5em;
+  }
 
-.post-full-content .kg-image {
-  max-width: 100%;
-}
+  p:not([class]),
+  p:not([class]) {
+    margin: 0 0 1.5em 0;
+  }
 
-/* Preventing full-width image overlap with post image.  */
-.post-full-image + .post-full-content .kg-content *:first-child .kg-image {
-  width: 100%;
-}
-
-.post-full-content .kg-width-wide .kg-image {
-  max-width: 1040px;
-}
-
-.post-full-content .kg-width-full .kg-image {
-  max-width: 100vw;
-}
-
-.post-full-content {
   figure {
     margin: 1.5em 0 3em;
   }
+
   figure img {
     margin: 0;
   }
+
   figcaption {
     margin: 1em 0 0;
     font-size: 80%;
     line-height: 1.6em;
     text-align: center;
   }
-}
 
-.kg-width-full figcaption {
-  padding: 0 1.5em;
-}
-
-.kg-embed-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-}
-
-.kg-embed-card .fluid-width-video-wrapper {
-  margin: 0;
-}
-
-@media (max-width: 1040px) {
-  .post-full-content .kg-width-full .kg-image {
-    width: 100vw;
-  }
-}
-
-.kg-gallery-container {
-  display: flex;
-  flex-direction: column;
-  max-width: 1040px;
-  width: 100vw;
-}
-
-.kg-gallery-row {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-.kg-gallery-image img {
-  display: block;
-  margin: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.kg-gallery-row:not(:first-of-type) {
-  margin: 0.75em 0 0 0;
-}
-
-.kg-gallery-image:not(:first-of-type) {
-  margin: 0 0 0 0.75em;
-}
-
-.kg-gallery-card + .kg-image-card.kg-width-wide,
-.kg-gallery-card + .kg-gallery-card,
-.kg-image-card.kg-width-wide + .kg-gallery-card,
-.kg-image-card.kg-width-wide + .kg-image-card.kg-width-wide {
-  margin: -2.25em 0 3em;
-}
-
-/* keep existing <pre> styles for code cards with captions */
-.kg-code-card {
-  min-width: 100%;
-}
-
-.kg-code-card pre {
-  margin: 0;
-}
-
-.kg-image-card {
-  // Post image figure
-}
-
-.kg-width-wide {
-  // Wide post figure
-}
-
-.kg-width-full {
-  // Full width post figure
-}
-
-.kg-image {
-  // Post image
-}
-
-.kg-embed-card {
-  // Post embeded iframe content
-}
-
-.kg-gallery-container {
-  // Post gallery container
-}
-
-.kg-gallery-row {
-  // Post gallery row
-}
-
-.kg-gallery-image {
-  // Post gallery image
-}
-
-/*
-Bulma overrides -- from Casper theme
-":not([class]):not(:empty)" is added to hit only these elements with no other class (e.g. from the editor)
-*/
-
-.post-full-content {
   iframe {
     margin: 0 auto !important;
   }
@@ -235,6 +119,21 @@ Bulma overrides -- from Casper theme
   }
 }
 
+.avatar-wrapper {
+  svg {
+    margin: 0;
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    background-color: black;
+  }
+}
+
+/*
+Bulma overrides -- from Casper theme
+":not([class]):not(:empty)" is added to hit only these elements with no other class (e.g. from the editor)
+*/
+
 h1:not([class]) {
   @extend .title;
   @extend .is-2;
@@ -263,9 +162,4 @@ h5:not([class]) {
 h6:not([class]) {
   @extend .title;
   @extend .is-7;
-}
-
-.page-content p:not([class]),
-.post-content p:not([class]) {
-  margin: 0 0 1.5em 0;
 }

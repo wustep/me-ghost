@@ -1,5 +1,5 @@
 <header>
-  <nav class="navbar is-info" role="navigation" aria-label="main navigation">
+  <nav class="navbar is-link" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <a class="navbar-item" href="{{@site.url}}">
         {{#if @site.logo}}
@@ -29,7 +29,7 @@
     </div>
   </nav>
 
-  <section class="hero is-info" {{#if @site.cover_image}}
+  <section class="hero site-header" {{#if @site.cover_image}}
     style="background-image: url({{@site.cover_image}}); background-position: center center;"
     {{/if}}>
     <div class="hero-body">

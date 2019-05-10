@@ -17,16 +17,16 @@
       {{! Give primary-tag different Bulma (is-primary) styling than others (is-link)}}
       {{#foreach tags}}
         {{#if @first}}
-          <a class="tag is-primary is-normal" href="{{url}}">{{name}}</a>
-        {{else}}
           <a class="tag is-link is-normal" href="{{url}}">{{name}}</a>
+        {{else}}
+          <a class="tag is-info is-normal" href="{{url}}">{{name}}</a>
         {{/if}}
       {{/foreach}}
     </p>
   </header><br>
 
   {{#if feature_image}}
-  <figure class="post-full-image">
+  <figure class="post-image">
     <img
     src="{{feature_image}}"
     alt="{{title}}"
@@ -34,13 +34,11 @@
   </figure>
   {{/if}}
 
-  <section class="post-full-content">
-    <div class="post-content">
-      {{content}}
-    </div>
+  <section class="post-content">
+    {{content}}
   </section>
 
-  <footer class="post-full-footer">
+  <footer class="post-footer">
     {{> "byline"}}
   </footer>
 </article>

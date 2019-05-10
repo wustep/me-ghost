@@ -2,9 +2,26 @@
 
 @import "bourbon";
 
-@import "variables";
+/*
+  Bulma overrides
+  See defaults:
+  https://bulma.io/documentation/customize/variables/
+  https://bulma.io/documentation/overview/colors/
+*/
+
+$footer-padding: 3rem 1.5rem; /* from Bulma: 3rem 1.5rem 6rem */
+
 @import "../../node_modules/bulma/bulma";
 @import "../../node_modules/bulma/sass/utilities/_all";
+
+/* Custom variables */
+
+$site-header-background-color: $black;
+$site-header-color: $white;
+
+$card-header-background-color: $black-ter;
+$card-header-hover-background-color: $black;
+$card-header-color: $white-ter;
 
 @import "screen";
 @import "custom";
