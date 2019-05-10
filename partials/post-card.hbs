@@ -1,10 +1,17 @@
 <div class="card post-card">
   <a href={{url}} class="post-card-link">
-    <header class="card-header post-card-header">
-      <h6 class="subtitle is-7 post-card-published">
+    <header class="card-header">
+      <h6 class="subtitle is-7">
         {{date published_at format="DD MMM YYYY"}}
       </h6>
       <h4 class="title is-4">{{title}}</h4>
+      {{#foreach tags}}
+        {{#if @first}}
+          <a class="tag is-primary is-normal" href="{{url}}">{{name}}</a>
+        {{else}}
+          <a class="tag is-link is-normal" href="{{url}}">{{name}}</a>
+        {{/if}}
+      {{/foreach}}
     </header>
     <div class="card-content post-card-content">
       <p>{{excerpt words="33"}}</p>
