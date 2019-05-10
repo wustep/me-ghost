@@ -1,0 +1,32 @@
+<div class="modal subscribe-modal">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Subscribe to {{@site.title}}</p>
+      <button class="delete modal-close-button" aria-label="close"></button>
+    </header>
+
+    <form method="post" action="{{action}}" class="{{form_class}}">
+      {{! This is required for the form to work correctly }}
+      {{hidden}}
+
+      <section class="modal-card-body">
+        {{#if error}}
+            <p class="main-error">{{ error.message }}</p>
+        {{/if}}
+
+        <p>Get the latest posts delivered right to your inbox, once a month!<br>
+          This isn't set up yet, but will be later...</p><br>
+
+        <input class="input subscribe-email" name="email" type="text" placeholder="What's your email?">
+
+      </section>
+      <footer class="modal-card-foot">
+        <button class="{{button_class}} button is-primary" type="submit">Subscribe</button>
+        <a class="button modal-close-button">Close</a>
+      </footer>
+
+      {{script}}
+    </form>
+  </div>
+</div>

@@ -63,13 +63,20 @@
   - ✔️ with title, excerpt, tags
   - add: feature image?
 - ✔️ Custom 404 page with 404-porcupine
+- Subscribe modal
+  - ✔️ Set up modal and form
+  - Set up form action and errors
 - ✔️ Build tools
   - ✔️ `gulp` for development and `gulp deploy` for deployment
   - ✔️ Compile SCSS to CSS
   - ✔️ JSHint (error-checking) and Sass-lint (style-checking)
     - Fix these errors!
   - Minify CSS and JavaScript
+
+**De-prioritized:**
+
 - Fork into generic Bulma + Ghost theme
+- Proper RSS feeds
 
 ## Development
 
@@ -105,10 +112,6 @@ GitHub -> [your GitHub]
 
 4. Write **posts** that are tagged `Projects`, `Articles`, or `Notes`!
 
-5. (optional) Use a service like Typeform to add a "Contact" button to the `home` page
-
-   Edit the button to use Bulma, with class `button` and `is-success` (or [another color](https://bulma.io/documentation/overview/colors/))!
-
 ### Modifications to Ghost
 
 Some minor mods were made to the Ghost code, particularly:
@@ -139,6 +142,16 @@ Routes were modified to change `tag/projects` -> `projects`, `tag/articles` -> `
 #### Add more internal pages
 
 By default, only "Home", "Projects", "Articles", and "Ideas" are in the left side of the nav. To add more internal pages to the nav bar, edit `partials/navigation.hbs` and make sure the new label is listed in the `#has` and `^has` statements.
+
+#### Contact button
+
+Use a service like Typeform to add a "Contact" button to the `home` page.
+
+Edit the button to use Bulma, with class `button` and `is-success` (or [another color](https://bulma.io/documentation/overview/colors/))!
+
+#### Subscribe button
+
+Add a subscribe button somewhere with classes `subscribe-button button is-primary`.
 
 ## Resources
 

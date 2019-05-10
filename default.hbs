@@ -16,8 +16,15 @@
     </section>
 
     {{> "site-footer"}}
+
+    {{!-- Email subscribe form at the bottom of the page --}}
+    {{#if @labs.subscribers}}
+      {{> "subscribe-modal"}}
+    {{/if}}
+
     {{ghost_foot}}
 
     <script src="{{asset "js/navigation.js"}}"></script>
+    <script src="{{asset "js/modals.js"}}"></script>
   </body>
 </html>

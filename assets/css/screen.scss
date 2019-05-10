@@ -13,7 +13,7 @@
   .navbar-end {
     .navbar-item {
       &:last-child {
-        margin-right: 5px;
+        margin-right: 15px;
       }
     }
   }
@@ -191,5 +191,29 @@
     }
 
     margin: auto 1em;
+  }
+}
+
+/* Subscription modal */
+
+.subscribe-modal {
+  text-align: center;
+  position: fixed /* This gets overriden elsewhere */;
+
+  .modal-card-head {
+    background-color: $black-ter;
+
+    .modal-card-title {
+      color: $white;
+    }
+  }
+
+  .modal-card-foot {
+    display: block;
+  }
+
+  input {
+    border-color: $grey-lighter
+      /* For some reason, this is transparent otherwise */;
   }
 }
