@@ -9,6 +9,30 @@
   }
 }
 
+.navbar-menu {
+  .navbar-end {
+    .navbar-item {
+      &:last-child {
+        margin-right: 5px;
+      }
+    }
+  }
+
+  svg {
+    display: none;
+  }
+
+  @media screen and (min-width: 1088px) {
+    svg {
+      display: inline;
+      height: 20px;
+      width: 20px;
+      fill: white;
+      margin-right: 5px;
+    }
+  }
+}
+
 /* Post Cards */
 
 .posts-card-row {

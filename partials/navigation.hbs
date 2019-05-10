@@ -2,7 +2,7 @@
   {{#foreach navigation}}
     {{#has label="Home, Projects, Articles, Notes"}}
       <a class="navbar-item nav-{{slug}}{{#if current}} is-active{{/if}}" href="{{url absolute="true"}}">
-          {{label}}
+        {{label}}
       </a>
     {{/has}}
   {{/foreach}}
@@ -10,7 +10,19 @@
   {{#foreach navigation}}
     {{^has label="Home, Projects, Articles, Notes"}}
       <a class="navbar-item nav-{{slug}}" href="{{url absolute="true"}}">
-          {{label}}
+        {{#has label="Facebook"}}
+          {{> icons/facebook}}
+        {{/has}}
+        {{#has label="Twitter"}}
+          {{> icons/twitter}}
+        {{/has}}
+        {{#has label="LinkedIn"}}
+          {{> icons/linkedin}}
+        {{/has}}
+        {{#has label="GitHub"}}
+          {{> icons/github}}
+        {{/has}}
+        {{label}}
       </a>
     {{/has}}
   {{/foreach}}
