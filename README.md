@@ -50,9 +50,8 @@
   - ✔️ Facebook, Twitter, GitHub, and LinkedIn will add icons
 - ✔️ Dedicated post webpages
   - Proper formatting--match editor styles
-    - ✔️ Headings, links, paragraphs, bold, italics, blockquotes
-      - Headings need better styling
-    - Pictures, code blocks
+    - ✔️ Headings, links, paragraphs, bold, italics, blockquotes, bullets, code blocks
+    - Pictures
     - Responsive feature images
   - ✔️ Author byline with icon, name, and bio
     - ✔️ Links to author's website

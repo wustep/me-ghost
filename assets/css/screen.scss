@@ -100,8 +100,31 @@
   }
 
   p:not([class]),
-  p:not([class]) {
+  ul:not([class]),
+  ol:not([class]),
+  dl:not([class]) {
     margin: 0 0 1.5em 0;
+  }
+
+  ul:not([class]) {
+    list-style: disc;
+  }
+
+  ol:not([class]),
+  ul:not([class]) {
+    padding-left: 1.3em;
+    padding-right: 1.5em;
+
+    ol:not([class]),
+    ul:not([class]) {
+      margin: 0.5em 0 1em;
+    }
+
+    li:not([class]) {
+      margin: 0.5em 0;
+      padding-left: 0.3em;
+      line-height: 1.6em;
+    }
   }
 
   figcaption {
@@ -215,5 +238,13 @@
   input {
     border-color: $grey-lighter
       /* For some reason, this is transparent otherwise */;
+  }
+}
+
+.post-footer {
+  margin-top: 1em;
+
+  .author-card {
+    margin-top: 2em;
   }
 }
