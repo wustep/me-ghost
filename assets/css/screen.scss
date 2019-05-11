@@ -244,8 +244,8 @@
   }
 
   input {
-    border-color: $grey-lighter
-      /* For some reason, this is transparent otherwise */;
+    /* For some reason, this is transparent otherwise */
+    border-color: $grey-lighter;
   }
 }
 

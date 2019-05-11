@@ -4,8 +4,8 @@
 # Node.js
 node_modules
 
-# Compiled CSS files
-assets/css/*.css
+# Compiled files
+assets/built/*
 
 # Packaged theme
 me.zip

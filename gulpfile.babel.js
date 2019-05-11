@@ -1,8 +1,11 @@
 /*
-Gulp file revised from ghost-theme-template:
+Gulp file revised from ghost-theme-template and casper:
 https://github.com/thoughtbot/ghost-theme-template/blob/master/gulpfile.babel.js
+https://github.com/TryGhost/Casper/blob/master/gulpfile.js
+
 - Use /assets/css/ and /assets/js/ folders
-- Only compile app.scss to css
+- Compiles and minifies app.scss to app.css
+- Concatenates and minifies js files to app.js
 */
 
 "use strict";
@@ -11,23 +14,24 @@ var gscan = require("gscan");
 
 import _ from "lodash";
 import autoprefix from "gulp-autoprefixer";
-import bourbon from "bourbon";
 import chalk from "chalk";
+import concat from "gulp-concat";
 import gulp from "gulp";
 import jshint from "gulp-jshint";
-import neat from "bourbon-neat";
 import pkg from "./package.json";
 import run from "run-sequence";
 import sass from "gulp-sass";
 import sasslint from "gulp-sass-lint";
 import stylish from "jshint-stylish";
+import uglify from "gulp-uglify-es";
 import zip from "gulp-zip";
 
 const paths = {
   scss: "./assets/css/**/*.scss",
   scssApp: "./assets/css/app.scss",
-  css: "./assets/css/",
-  js: "./assets/js/**/*.js"
+  js: "./assets/js/**/*.js",
+  jsBuilt: "app.js",
+  built: "./assets/built/"
 };
 
 const levels = {
@@ -42,17 +46,16 @@ gulp.task("sass", () =>
     .src(paths.scssApp)
     .pipe(
       sass({
-        sourcemaps: true,
-        includePaths: [bourbon.includePaths, neat.includePaths]
+        sourcemaps: true
       }).on("error", sass.logError)
     )
     .pipe(autoprefix("last 2 versions"))
-    .pipe(gulp.dest(paths.css))
+    .pipe(gulp.dest(paths.built))
 );
 
 gulp.task("sasslint", () =>
   gulp
-    .src([paths.scss])
+    .src(paths.scss)
     .pipe(
       sasslint({
         options: {
@@ -62,6 +65,15 @@ gulp.task("sasslint", () =>
       })
     )
     .pipe(sasslint.format())
+);
+
+gulp.task("js", () =>
+  gulp
+    .src(paths.js)
+    .pipe(concat(paths.jsBuilt))
+    .pipe(gulp.dest(paths.built))
+    .pipe(uglify())
+    .pipe(gulp.dest(paths.built))
 );
 
 gulp.task("jshint", () =>
@@ -126,9 +138,9 @@ gulp.task("zip", () =>
 
 gulp.task(
   "default",
-  ["sass", "sasslint", "jshint"],
-  () => gulp.watch(paths.scss, ["sass", "sasslint"]),
-  gulp.watch(paths.js, ["jshint"])
+  gulp.series("sass", "sasslint", "js", "jshint"),
+  () => gulp.watch(paths.scss, gulp.series("sass", "sasslint")),
+  gulp.watch(paths.js, gulp.series("js", "jshint"))
 );
 
 gulp.task("deploy", callback => run("sass", "zip", "scan", callback));
