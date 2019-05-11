@@ -4,3 +4,34 @@ iframe {
   /* Fix iframe for Typeform */
   height: 100%;
 }
+
+/* Tagify replacement styles */
+
+.tag-description {
+  background: $white-ter;
+  display: inline-block;
+  font-size: 0.75rem;
+  border-radius: $tag-radius;
+  padding-right: 0.75em;
+  color: $black;
+
+  .tag {
+    margin-right: 0.75em;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
+
+.tag.is-primary-label {
+  background-color: $grey-dark;
+  color: $white;
+}
+
+.tag.is-secondary-label {
+  background-color: $grey-light;
+  color: white;
+}
+
+.tag-collection {
+  margin: 0 0 0.75em 0;
+}
