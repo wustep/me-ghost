@@ -10,15 +10,12 @@
   - ✔️ Articles are tagged `Articles`
   - ✔️ "Read More" buttons linking to pages
   - ✔️ Uses 2 most recent projects and articles
-    - Loads `featured` prioritized
 - ✔️ Projects tab
   - ✔️ These should be posts tagged `Projects` first
   - ✔️ Set `/projects` to route to `/tags/projects`
   - ✔️ Projects will be loaded by creation date desc
   - ✔️ Projects are routed to `/projects/{slug}`
   - Loads `featured` projects first
-  - Filtering by tag (e.g. `Java`, `Tutorial`) JS
-  - Uses package.json property `posts-per-page` with pagination
   - ✔️ Hide day for datetime posted
     - Hide in post card too!
     - Add special way to have date range instead of regular dates..
@@ -27,7 +24,6 @@
   - ✔️ Articles will be loaded by creation date desc
   - ✔️ Articles are routed to `/articles/{slug}`
   - Loads `featured` first
-  - Uses package.json property `posts-per-page` with pagination
 - ✔️ Notes tab
   - ✔️ These should be posts tagged `Notes` first
   - ✔️ Notes will be loaded by creation date desc
@@ -36,35 +32,40 @@
   - ✔️ Hide day for datetime posted
     - Hide in post card too!
   - Uses package.json property `posts-per-page` with pagination
-- Projects/Articles/Notes tab use scripts/body from pages named those!
 - ✔️ Posts that are not primarily tagged `Articles` or `Projects` or `Notes` will be routed to `/`
-- ✔️ Tags category pages: `/tag/[tag]`
-  - And author: `/author/[author]`
-  - Fix pluralization error saying `A collection of` for `projects, notes, articles`
-  - Uses package.json property `posts-per-page`
 - ✔️ Dynamic navigation bar
   - ✔️ Based on the items in Settings > Navigation:
   - ✔️ "Home", "Projects", "Articles", and "Notes" will be on the left side
   - ✔️ Any other link will be on the right side
   - ✔️ Mobile-friendly dropdown
   - ✔️ Facebook, Twitter, GitHub, and LinkedIn will add icons
+- ✔️ Tags category pages: `/tag/[tag]`
+  - And author: `/author/[author]`
+  - Fix pluralization error saying `A collection of` for `projects, notes, articles`
+  - Uses package.json property `posts-per-page`
 - ✔️ Dedicated post webpages
   - Proper formatting--match editor styles
     - ✔️ Headings, links, paragraphs, bold, italics, blockquotes, bullets, code blocks
-    - Pictures
-    - Responsive feature images
+    - Images, responsive feature images
   - ✔️ Author byline with icon, name, and bio
     - ✔️ Links to author's website
     - with Multi-author support
-  - Syntax highlighting for programming code blocks
-  - Bug: Code injection might not work properly
-- ✔️ Post cards
+  - Bug: Ghost Code injection might not work properly
+- ✔️ Post Cards (loop)
   - ✔️ with title, excerpt, tags
-  - add: feature image?
+  - ✔️ (These will not have feature images)
+  - Use package.json property `posts-per-page` with pagination
 - ✔️ Custom 404 page with 404-porcupine
 - Subscribe modal
   - ✔️ Set up modal and form
   - Set up form action and errors
+- Special scripts:
+  - Syntax highlighting for programming code blocks
+  - ✔️ Convert external links to open in new tab
+  - ✔️ Tagify [#Tags] with Bulma tags
+    - ✔️ "[#TagName]" will be be turned into dark tags of TagName with `.is-primary-label`
+    - ✔️ "[##TagName]" will be turned into grey tags of TagName with `.is-secondary-label`
+    - ✔️ Lines that start and end in tags will be given `.label-collection`
 - ✔️ Build tools
   - ✔️ `gulp` for development and `gulp deploy` for deployment
   - ✔️ Compile SCSS to CSS
