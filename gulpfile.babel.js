@@ -141,7 +141,7 @@ gulp.task("zip", () =>
 gulp.task(
   "default",
   gulp.series("sass", "sasslint", "js", "jshint"),
-  () => gulp.watch(paths.scss, gulp.series("sass", "sasslint")),
+  gulp.watch(paths.scss, gulp.series("sass", "sasslint")),
   gulp.watch(paths.js, gulp.series("js", "jshint"))
 );
 

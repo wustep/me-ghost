@@ -71,7 +71,7 @@
   - ✔️ Compile SCSS to CSS
   - ✔️ JSHint (error-checking) and Sass-lint (style-checking)
     - Fix these errors!
-  - Minify CSS and JavaScript
+  - ✔️ Minify CSS and JavaScript
 
 **De-prioritized:**
 

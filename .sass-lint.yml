@@ -10,9 +10,9 @@ options:
 
 rules:
   # Extends
-  extends-before-mixins: 1
-  extends-before-declarations: 1
-  placeholder-in-extend: 1
+  # extends-before-mixins: 1
+  # extends-before-declarations: 1
+  # placeholder-in-extend: 1
 
   # Mixins
   mixins-before-declarations: 1
@@ -25,7 +25,7 @@ rules:
   # Disallows
   no-attribute-selectors: 0
   no-color-hex: 0
-  no-color-keywords: 1
+  # no-color-keywords: 1
   no-color-literals:
     - 1
     - allow-rgba: true
@@ -34,7 +34,7 @@ rules:
   no-disallowed-properties: 0
   no-duplicate-properties: 1
   no-empty-rulesets: 1
-  no-extends: 1
+  # no-extends: 1
   no-ids: 1
   no-important: 1
   no-invalid-hex: 1

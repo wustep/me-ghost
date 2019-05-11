@@ -27,7 +27,7 @@
       display: inline;
       height: 20px;
       width: 20px;
-      fill: white;
+      fill: $white;
       margin-right: 5px;
     }
   }
@@ -49,8 +49,8 @@
 
   &:hover {
     /* Casper card magnify */
-    transition: all 0.4s ease;
-    transform: translate3D(0, -1px, 0) scale(1.02);
+    transition: color 0.4s ease-in, margin-bottom 0.4s ease-in;
+    transform: translate3d(0, -1px, 0) scale(1.02);
 
     header {
       background-color: $card-header-hover-background-color;
@@ -103,7 +103,7 @@
   ul:not([class]),
   ol:not([class]),
   dl:not([class]) {
-    margin: 0 0 1.5em 0;
+    margin: 0 0 1.5em;
   }
 
   ul:not([class]) {
@@ -135,11 +135,12 @@
   }
 
   iframe {
-    margin: 0 auto !important;
+    margin: 0 auto;
   }
 
   blockquote {
-    // Use Bulma's Message Body: https://bulma.io/documentation/components/message/#message-body-only
+    /* Use Bulma's Message Body:
+    https://bulma.io/documentation/components/message/#message-body-only */
     @extend .message;
     @extend .message-body;
     border-color: $info;
@@ -159,7 +160,7 @@
     padding: 0 5px 2px;
     font-size: 0.8em;
     line-height: 1em;
-    font-weight: 400 !important;
+    font-weight: 400;
     background: $code-background-color;
     border-radius: 3px;
   }
@@ -227,8 +228,6 @@
   &.is-active {
     opacity: 1;
     transition: opacity 0.2s ease-in;
-    -moz-transition: opacity 0.2s ease-in;
-    -webkit-transition: opacity 0.2s ease-in;
   }
 
   .modal-card-head {
