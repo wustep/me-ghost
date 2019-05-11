@@ -3,20 +3,20 @@ $(document).ready(function() {
   let html = $("html");
   let modal = $(".subscribe-modal");
 
-  $("a.subscribe-button").on("click", function(event) {
-    event.preventDefault();
+  $(".subscribe-button").click(function(e) {
+    e.preventDefault();
     modal.addClass("is-active");
     html.addClass("is-clipped");
     $(".subscribe-email").focus();
-
-    $(".modal-background").on("click", function(event) {
-      event.preventDefault();
-      modal.removeClass("is-active");
-    });
   });
 
-  $(".modal-close-button").on("click", function(event) {
-    event.preventDefault();
+  $(".modal-background").click(function(e) {
+    e.preventDefault();
+    modal.removeClass("is-active");
+  });
+
+  $(".modal-close-button").click(function(e) {
+    e.preventDefault();
     modal.removeClass("is-active");
     html.removeClass("is-clipped");
   });
