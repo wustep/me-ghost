@@ -1,41 +1,29 @@
-// Modals from https://bulma.io/documentation/components/modal/
+/* Modal buttons: https://bulma.io/documentation/components/modal/ */
+$(document).ready(function() {
+  let html = $("html");
+  let modal = $(".subscribe-modal");
 
-let html = document.querySelector("html");
-let modal = document.querySelector(".subscribe-modal"); // assuming you have only 1
-
-// Given a button of class .modal-button, open the modal from its data-target when clicked
-let modalSubscribeButtons = document.querySelectorAll("a.subscribe-button");
-
-for (subscribeButton of modalSubscribeButtons) {
-  subscribeButton.addEventListener("click", function(event) {
+  $("a.subscribe-button").on("click", function(event) {
     event.preventDefault();
-    modal.classList.add("is-active");
-    html.classList.add("is-clipped");
+    modal.addClass("is-active");
+    html.addClass("is-clipped");
+    $(".subscribe-email").focus();
 
-    document.querySelector(".subscribe-email").focus();
-
-    modal
-      .querySelector(".modal-background")
-      .addEventListener("click", function(e) {
-        e.preventDefault();
-        modal.classList.remove("is-active");
-      });
+    $(".modal-background").on("click", function(event) {
+      event.preventDefault();
+      modal.removeClass("is-active");
+    });
   });
-}
 
-let modalCloseButtons = modal.querySelectorAll(".modal-close-button");
-
-for (modalCloseButton of modalCloseButtons) {
-  modalCloseButton.addEventListener("click", function(e) {
-    e.preventDefault();
-    modal.classList.remove("is-active");
-    html.classList.remove("is-clipped");
+  $(".modal-close-button").on("click", function(event) {
+    event.preventDefault();
+    modal.removeClass("is-active");
+    html.removeClass("is-clipped");
   });
-}
 
-document.onkeydown = function(evt) {
-  evt = evt || window.event;
-  if (evt.keyCode == 27) {
-    modal.classList.remove("is-active");
-  }
-};
+  $(document).keyup(function(e) {
+    if (e.keyCode === 27) {
+      modal.removeClass("is-active");
+    }
+  });
+});

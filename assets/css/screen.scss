@@ -160,7 +160,7 @@
     font-size: 0.8em;
     line-height: 1em;
     font-weight: 400 !important;
-    background: #e5eff5;
+    background: $code-background-color;
     border-radius: 3px;
   }
 
@@ -222,6 +222,14 @@
 .subscribe-modal {
   text-align: center;
   position: fixed /* This gets overriden elsewhere */;
+  opacity: 0;
+
+  &.is-active {
+    opacity: 1;
+    transition: opacity 0.2s ease-in;
+    -moz-transition: opacity 0.2s ease-in;
+    -webkit-transition: opacity 0.2s ease-in;
+  }
 
   .modal-card-head {
     background-color: $black-ter;
