@@ -7,8 +7,8 @@ Turn "[##Tag or #Tag]: Description" into span with tag-description
 Turn "<p>[#Tag] ... [#Tag]</p>" into p with tag-collection
  */
 $(document).ready(function() {
-  var collectionRegex = new RegExp(/<p>\[#(.*?)\]<\/p>/, "g");
-  var collectionReplace = '<span class="label-collection">[#$1]</span>';
+  var collectionRegex = new RegExp(/<p>[ \t]*\[#(.*?)\][ \t]*<\/p>/, "g");
+  var collectionReplace = '<p class="label-collection">[#$1]</p>';
 
   var instructionRegex = new RegExp(/\[#(.*?)\]: (.*?)(<br>|<\/p>)/, "g");
   var instructionReplace = '<span class="label-description">[#$1]$2</span>$3';
