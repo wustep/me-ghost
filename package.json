@@ -23,11 +23,14 @@
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-preset-env": "^1.6.1",
+    "bulma": "^0.7.4",
     "chalk": "^2.1.0",
     "gscan": "^2.6.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^4.0.0",
     "gulp-babel": "^7.0.0",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-concat": "^2.6.1",
     "gulp-jshint": "^2.0.4",
     "gulp-run": "^1.7.1",
     "gulp-sass": "^4.0.2",
@@ -41,10 +44,5 @@
   },
   "config": {
     "posts_per_page": 10
-  },
-  "dependencies": {
-    "bulma": "^0.7.4",
-    "gulp-concat": "^2.6.1",
-    "gulp-uglify": "^3.0.2"
   }
 }

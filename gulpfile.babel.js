@@ -15,6 +15,7 @@ var gscan = require("gscan");
 import _ from "lodash";
 import autoprefix from "gulp-autoprefixer";
 import chalk from "chalk";
+import cleanCSS from "gulp-clean-css";
 import concat from "gulp-concat";
 import gulp from "gulp";
 import jshint from "gulp-jshint";
@@ -50,6 +51,7 @@ gulp.task("sass", () =>
       }).on("error", sass.logError)
     )
     .pipe(autoprefix("last 2 versions"))
+    .pipe(cleanCSS({ compatibility: "ie8" }))
     .pipe(gulp.dest(paths.built))
 );
 
