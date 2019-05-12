@@ -23,6 +23,7 @@ import pkg from "./package.json";
 import run from "run-sequence";
 import sass from "gulp-sass";
 import sasslint from "gulp-sass-lint";
+import sourcemaps from "gulp-sourcemaps";
 import stylish from "jshint-stylish";
 import uglify from "gulp-uglify-es";
 import zip from "gulp-zip";
@@ -45,13 +46,11 @@ const levels = {
 gulp.task("sass", () =>
   gulp
     .src(paths.scssApp)
-    .pipe(
-      sass({
-        sourcemaps: true
-      }).on("error", sass.logError)
-    )
+    .pipe(sourcemaps.init())
+    .pipe(sass().on("error", sass.logError))
     .pipe(autoprefix("last 2 versions"))
     .pipe(cleanCSS({ compatibility: "ie8" }))
+    .pipe(sourcemaps.write("./"))
     .pipe(gulp.dest(paths.built))
 );
 
@@ -72,9 +71,11 @@ gulp.task("sasslint", () =>
 gulp.task("js", () =>
   gulp
     .src(paths.js)
+    .pipe(sourcemaps.init())
     .pipe(concat(paths.jsBuilt))
     .pipe(gulp.dest(paths.built))
     .pipe(uglify())
+    .pipe(sourcemaps.write("./"))
     .pipe(gulp.dest(paths.built))
 );
 

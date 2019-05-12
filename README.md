@@ -10,7 +10,7 @@
   - ✔️ Articles are tagged `Articles`
   - ✔️ "Read More" buttons linking to pages
   - ✔️ Uses 2 most recent projects and articles
-- ✔️ Projects tab
+- ✔️ Projects
   - ✔️ These should be posts tagged `Projects` first
   - ✔️ Set `/projects` to route to `/tags/projects`
   - ✔️ Projects will be loaded by creation date desc
@@ -19,12 +19,12 @@
   - ✔️ Hide day for datetime posted
     - Hide in post card too!
     - Add special way to have date range instead of regular dates..
-- ✔️ Articles tab
+- ✔️ Articles
   - ✔️ These should be posts tagged `Articles` first
   - ✔️ Articles will be loaded by creation date desc
   - ✔️ Articles are routed to `/articles/{slug}`
   - Loads `featured` first
-- ✔️ Notes tab
+- ✔️ Notes
   - ✔️ These should be posts tagged `Notes` first
   - ✔️ Notes will be loaded by creation date desc
   - ✔️ Notes are routed to `/articles/{slug}`
@@ -41,8 +41,6 @@
   - ✔️ Facebook, Twitter, GitHub, and LinkedIn will add icons
 - ✔️ Tags category pages: `/tag/[tag]`
   - And author: `/author/[author]`
-  - Fix pluralization error saying `A collection of` for `projects, notes, articles`
-  - Uses package.json property `posts-per-page`
 - ✔️ Dedicated post webpages
   - Proper formatting--match editor styles
     - ✔️ Headings, links, paragraphs, bold, italics, blockquotes, bullets, code blocks
@@ -59,19 +57,19 @@
 - Subscribe modal
   - ✔️ Set up modal and form
   - Set up form action and errors
-- Special scripts:
+- Additional scripts:
+  - ✔️ Add jQuery
   - Syntax highlighting for programming code blocks
   - ✔️ Convert external links to open in new tab
   - ✔️ Tagify [#Tags] with Bulma tags
     - ✔️ "[#TagName]" will be be turned into dark tags of TagName with `.is-primary-label`
     - ✔️ "[##TagName]" will be turned into grey tags of TagName with `.is-secondary-label`
     - ✔️ Lines that start and end in tags will be given `.label-collection`
-- ✔️ Build tools
+- ✔️ Build tools:
   - ✔️ `gulp` for development and `gulp deploy` for deployment
   - ✔️ Compile SCSS to CSS
   - ✔️ JSHint (error-checking) and Sass-lint (style-checking)
-    - Fix these errors!
-  - ✔️ Minify CSS and JavaScript
+  - ✔️ Minify CSS and JavaScript with source maps
 
 **De-prioritized:**
 
@@ -92,7 +90,7 @@
 
 ## Setup
 
-0. [Install Ghost](https://docs.ghost.org/setup/) and complete modifications below.
+0. [Install Ghost](https://docs.ghost.org/setup/) and complete modifications noted below.
 
 1. Clone this repo to `/content/themes`, then (`npm install`) and (use `gulp`) or (`gulp deploy` and upload zip file to **Settings -> Design**).
 
@@ -104,8 +102,7 @@ Projects -> /projects/
 Articles -> /articles/
 Notes -> /notes/
 (optional)
-LinkedIn -> [your LinkedIn]
-GitHub -> [your GitHub]
+LinkedIn, Twitter, GitHub, Facebook
 ```
 
 3. Create a **page** with URL `/home`. This will be shown on the home page.
@@ -135,7 +132,7 @@ label: function() {
 
 Routes were modified to change `tag/projects` -> `projects`, `tag/articles` -> `articles`, and `tag/notes` -> `notes` and have the user-created page `/home` -> `/`.
 
-- Replace your `content/settings/routes.yaml` with the `routes.yaml` in this repository, modifying as desired
+- Replace your `content/settings/routes.yaml` with the `routes.yaml` in this repository, modifying as desired.
 
 ### Other Optional Changes
 
@@ -149,9 +146,19 @@ Use a service like Typeform to add a "Contact" button to the `home` page.
 
 Edit the button to use Bulma, with class `button` and `is-success` (or [another color](https://bulma.io/documentation/overview/colors/))!
 
+Example:
+
+```
+<a class="typeform-share button is-success" href="https://wustep.typeform.com/to/LR3jOI" data-mode="popup" target="_blank">Contact Me</a>
+```
+
 #### Subscribe button
 
 Add a subscribe button somewhere with classes `subscribe-button button is-primary`.
+
+```
+<a class="button subscribe-button is-primary" data-target="subscribe-modal" href="#subscribe">Subscribe</a>
+```
 
 ## Resources
 
