@@ -61,8 +61,9 @@
   - Syntax highlighting for programming code blocks
   - ✔️ Convert external links to open in new tab
   - ✔️ Tagify [#Tags] with Bulma tags
-    - ✔️ "[#TagName]" will be be turned into dark tags of TagName with `.is-primary-label`
-    - ✔️ "[##TagName]" will be turned into grey tags of TagName with `.is-secondary-label`
+    - ✔️ "[##TagName]" will be turned into dark tags of #TagName with `.is-primary-label`
+    - ✔️ "[##!TagName]" will get the same treatment but with anchor link
+    - ✔️ "[#TagName]" will be turned into grey tags of #TagName with `.is-secondary-label`
     - ✔️ Lines that start and end in tags will be given `.label-collection`
 - ✔️ Build tools:
   - ✔️ `gulp` for development and `gulp deploy` for deployment
@@ -132,6 +133,10 @@ label: function() {
 Routes were modified to change `tag/projects` -> `projects`, `tag/articles` -> `articles`, and `tag/notes` -> `notes` and have the user-created page `/home` -> `/`.
 
 - Replace your `content/settings/routes.yaml` with the `routes.yaml` in this repository, modifying as desired.
+
+#### 3. (Optional) Change excerpt algorithm
+
+Automatic excerpts, by default, tend to be a poor result and concatenate multiple lines together without proper spacing. Optionally, revise the `excerpt` code to catch only the first `<p>` block instead of carrying on.
 
 ### Other Optional Changes
 
