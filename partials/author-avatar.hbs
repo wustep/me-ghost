@@ -1,0 +1,13 @@
+{{#if large}}
+<p class="image is-128x128 is-rounded">
+{{else}}
+<p class="image is-64x64 is-rounded">
+{{/if}}
+  <a href="{{website}}">
+    {{#if profile_image}}
+        <img class="author-profile-image is-rounded" src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
+    {{else}}
+        <span class="avatar-wrapper">{{> "icons/avatar"}}</span>
+    {{/if}}
+    </a>
+</p>

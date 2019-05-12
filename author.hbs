@@ -1,5 +1,29 @@
 {{!< default}}
 
+{{#author}}
 <div class="container">
-  Author page TBD
+
+  <center>
+    {{> "author-avatar" large=true}}<br>
+    <h1 class="title">{{name}}</h1>
+    <h2 class="subtitle">
+      {{#if bio}}
+        {{bio}}
+      {{else}}
+        {{! Bug: For special tag pages like Projects/Articles/Ideas,
+            pagination is not populated, so we just show no description here.
+            Instead, add a description to the tag!
+        }}
+        {{#if ../pagination}}
+          A collection of {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}
+        {{/if}}
+      {{/if}}
+    </h2>
+  </center>
+  <br>
+
+  {{#get "posts" filter="author:{{slug}}"}}
+    {{> "post-card-loop"}}
+  {{/get}}
 </div>
+{{/author}}

@@ -39,8 +39,7 @@
   - ✔️ Any other link will be on the right side
   - ✔️ Mobile-friendly dropdown
   - ✔️ Facebook, Twitter, GitHub, and LinkedIn will add icons
-- ✔️ Tags category pages: `/tag/[tag]`
-  - And author: `/author/[author]`
+- ✔️ Tags category pages: `/tag/[tag]` and author page: `/author/[author]`
 - ✔️ Dedicated post webpages
   - Proper formatting--match editor styles
     - ✔️ Headings, links, paragraphs, bold, italics, blockquotes, bullets, code blocks
