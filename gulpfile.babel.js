@@ -134,7 +134,7 @@ gulp.task("scan", () => {
 
 gulp.task("zip", () =>
   gulp
-    .src(["./**/*", "!./node_modules/**", `!./${pkg.name}.zip`])
+    .src(["./**/*", "!./node_modules/**", `!./${pkg.name}.zip`, "!**.map"])
     .pipe(zip(`./${pkg.name}.zip`))
     .pipe(gulp.dest("."))
 );
