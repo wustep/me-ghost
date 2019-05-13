@@ -2,7 +2,10 @@
 # slightly modified from github.com/thoughtbot/ghost-theme-template
 
 files:
-  include: "/assets/css/*.scss"
+  include:
+    - "assets/css/*.scss"
+  ignore:
+    - "assets/css/highlight.scss"
 
 options:
   formatter: stylish

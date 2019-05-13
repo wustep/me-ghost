@@ -108,8 +108,10 @@
 
   ul:not([class]) {
     list-style: disc;
+
     ul:not([class]) {
       list-style: circle;
+
       ul:not([class]) {
         list-style: square;
       }
