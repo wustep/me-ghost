@@ -170,9 +170,9 @@ I added syntax highlighting through `highlight.js` for a limited number of langu
 
 I excluded many common ones, like `[C#, C++, Ruby, Makefiles, Apache]`, and there's tons more that can be added.
 
-If you'd like to replace this library or change the theme, [build your own package at highlightjs.org](https://highlightjs.org/download/) and replace `assets/lib/highlight.js` and/or `assets/css/highlight.scss`.
+If you'd like to replace this library, [build your own package at highlightjs.org](https://highlightjs.org/download/) and replace `assets/lib/highlight.pack.js`.
 
-Be sure to note the `pre` styling at the top of `highlight.scss`.
+To change the theme, follow the instructions in `assets/css/highlight.scss`.
 
 ## Resources
 

@@ -1,7 +1,25 @@
-pre {
-  /* Add this here based on the .hljs background below! */
-  background-color: #282c34;
+/*
+To change the theme, get a new one from https://highlightjs.org/,
+and replace the theme below this block.
+
+Then, update the "Use from" colors in this block.
+*/
+
+pre,
+code {
+  background-color: #282c34; /* Use from `.hljs` */
 }
+
+.hljs a {
+  color: #abb2bf; /* Use from `.hljs` */
+  text-decoration: underline;
+
+  &:hover {
+    color: #abb2bf; /* Use from `.hljs` */
+  }
+}
+
+/* ---- Highlight.js theme ----- */
 
 /*
 Atom One Dark by Daniel Gamage
@@ -24,7 +42,7 @@ hue-6-2: #e6c07b
 */
 
 .hljs {
-  display: block;
+  // display: block;
   overflow-x: auto;
   padding: 0.5em;
   color: #abb2bf;
