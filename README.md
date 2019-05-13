@@ -46,7 +46,6 @@
     - Images, responsive feature images
   - ✔️ Author byline with icon, name, and bio
     - ✔️ Links to author's website
-    - with Multi-author support
   - Bug: Ghost Code injection might not work properly
 - ✔️ Post Cards (loop)
   - ✔️ with title, excerpt, tags
@@ -57,8 +56,8 @@
   - ✔️ Set up modal and form
   - Set up form action and errors
 - Additional scripts:
-  - ✔️ Add jQuery
-  - Syntax highlighting for programming code blocks
+  - ✔️ Add [jQuery v3.2](https://jquery.com/) via CDN
+  - ✔️ [Syntax highlighting](https://github.com/highlightjs/highlight.js/blob/master/README.md) for programming code blocks with Highlight.js
   - ✔️ Convert external links to open in new tab
   - ✔️ Tagify [#Tags] with Bulma tags
     - ✔️ "[##TagName]" will be turned into dark tags of #TagName with `.is-primary-label`
@@ -73,8 +72,9 @@
 
 **De-prioritized:**
 
-- Fork into generic Bulma + Ghost theme
+- Multi-author byline support
 - Proper RSS feeds
+- Fork into generic Bulma + Ghost theme
 
 ## Development
 
@@ -163,6 +163,16 @@ Add a subscribe button somewhere with classes `subscribe-button button is-primar
 ```
 <a class="button subscribe-button is-primary" data-target="subscribe-modal" href="#subscribe">Subscribe</a>
 ```
+
+#### Syntax highlighting
+
+I added syntax highlighting through `highlight.js` for a limited number of languages that I felt I might use (including `[JavaScript, Python, Java, SQL, JSON, Markdown, HTTP, CSS, SCSS, ...]`).
+
+I excluded many common ones, like `[C#, C++, Ruby, Makefiles, Apache]`, and there's tons more that can be added.
+
+If you'd like to replace this library or change the theme, [build your own package at highlightjs.org](https://highlightjs.org/download/) and replace `assets/lib/highlight.js` and/or `assets/css/highlight.scss`.
+
+Be sure to note the `pre` styling at the top of `highlight.scss`.
 
 ## Resources
 
