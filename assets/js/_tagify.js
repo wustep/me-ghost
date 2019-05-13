@@ -1,6 +1,9 @@
 /*
 Tagify labels with Bulma styles!
 
+This file is given an underscore so it is concatenated first.
+Otherwise, the replacement of html may mess up event triggers.
+
 Turn "[##TagName]" into span.tag with with #TagName is-primary-label
 Turn "[##!TagName]" with the same treatment with anchor link
 Turn "[#TagName]" into span.tag with #TagName is-secondary-label
