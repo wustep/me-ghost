@@ -5,6 +5,17 @@ iframe {
   height: 100%;
 }
 
+/* HACK: Hide day in post-card for Project and Notes */
+
+.post-card-link {
+  &[href^="/projects/"],
+  &[href^="/notes"] {
+    .post-card-day {
+      display: none;
+    }
+  }
+}
+
 /* Tagify replacement styles */
 
 .label-description {

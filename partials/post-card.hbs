@@ -2,7 +2,12 @@
   <a href={{url}} class="post-card-link">
     <header class="card-header">
       <h6 class="subtitle is-7">
-        {{date published_at format="DD MMM YYYY"}}
+        {{!--
+          For some reason, I can't get tags to be passed to this card,
+          so we do a hack to hide days for Projects and Notes
+        --}}
+        <span class="post-card-day">{{date published_at format="DD"}} </span>
+        {{date published_at format="MMMM YYYY"}}
       </h6>
       <h4 class="title is-4">{{title}}</h4>
     </header>

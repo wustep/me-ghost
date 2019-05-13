@@ -16,9 +16,7 @@
   - ✔️ Projects will be loaded by creation date desc
   - ✔️ Projects are routed to `/projects/{slug}`
   - Loads `featured` projects first
-  - ✔️ Hide day for datetime posted
-    - Hide in post card too!
-    - Add special way to have date range instead of regular dates..
+  - ✔️ Hide day for datetime published
 - ✔️ Articles
   - ✔️ These should be posts tagged `Articles` first
   - ✔️ Articles will be loaded by creation date desc
@@ -29,8 +27,7 @@
   - ✔️ Notes will be loaded by creation date desc
   - ✔️ Notes are routed to `/articles/{slug}`
   - Loads `featured` first
-  - ✔️ Hide day for datetime posted
-    - Hide in post card too!
+  - ✔️ Hide day for datetime published
   - Uses package.json property `posts-per-page` with pagination
 - ✔️ Posts that are not primarily tagged `Articles` or `Projects` or `Notes` will be routed to `/`
 - ✔️ Dynamic navigation bar
