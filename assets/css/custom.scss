@@ -22,14 +22,18 @@ iframe {
   }
 }
 
+.tag.is-primary-label,
+.tag.is-secondary-label {
+  color: $white;
+  font-weight: 600;
+}
+
 .tag.is-primary-label {
   background-color: $grey-dark;
-  color: $white;
 }
 
 .tag.is-secondary-label {
   background-color: $grey-light;
-  color: $white;
 }
 
 .label-collection {

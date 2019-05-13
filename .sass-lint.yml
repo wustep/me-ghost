@@ -1,5 +1,7 @@
 # sass-lint config
-# slightly modified from github.com/thoughtbot/ghost-theme-template
+#
+# Modified from: https://github.com/thoughtbot/ghost-theme-template
+# See: https://github.com/sasstools/sass-lint
 
 files:
   include:
