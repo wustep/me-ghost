@@ -28,7 +28,6 @@
   - ✔️ Notes are routed to `/articles/{slug}`
   - Loads `featured` first
   - ✔️ Hide day for datetime published
-  - Uses package.json property `posts-per-page` with pagination
 - ✔️ Posts that are not primarily tagged `Articles` or `Projects` or `Notes` will be routed to `/`
 - ✔️ Dynamic navigation bar
   - ✔️ Based on the items in Settings > Navigation:
@@ -43,17 +42,14 @@
     - Images, responsive feature images
   - ✔️ Author byline with icon, name, and bio
     - ✔️ Links to author's website
-  - Bug: Ghost Code injection might not work properly
 - ✔️ Post Cards (loop)
   - ✔️ with title, excerpt, tags
   - ✔️ (These will not have feature images)
   - Use package.json property `posts-per-page` with pagination
+    - ([Ran into some issues with pagination related to #get](https://github.com/TryGhost/Ghost/issues/9011))
 - ✔️ Custom 404 page with 404-porcupine
-- Subscribe modal
-  - ✔️ Set up modal and form
-  - Set up form action and errors
-- Additional scripts:
-  - ✔️ Add [jQuery v3.2](https://jquery.com/) via CDN
+- ✔️ Additional scripts:
+  - ✔️ Add [jQuery v3.4](https://jquery.com/) via CDN
   - ✔️ [Syntax highlighting](https://github.com/highlightjs/highlight.js/blob/master/README.md) for programming code blocks with Highlight.js
   - ✔️ Convert external links to open in new tab
   - ✔️ Tagify [#Tags] with Bulma tags
@@ -69,21 +65,25 @@
 
 **De-prioritized:**
 
+- Subscribe modal
+  - ✔️ Set up modal and form
+  - Set up form action and errors
+  - (Using Typeform subscribe form instead)
 - Multi-author byline support
 - Proper RSS feeds
 - Fork into generic Bulma + Ghost theme
 
 ## Development
 
-- With npm installed, install gulp globally with `npm install -g gulp`.
+- With [npm](https://www.npmjs.com/get-npm) installed, install `gulp` globally with `npm install -g gulp`.
 
-- `gulp`: run compile task with Sass, Autoprefixer, and JSHint, watching for changes
+- `gulp`: compiles with Sass, Autoprefixer, Sass-lint, JSHint, Minify, watching for changes.
 
-  - Ghost reloads `.hbs` changes by default, but new partials will require a `ghost restart`
+  - Ghost reloads `.hbs` changes by default, but new partials will require a `ghost restart`.
 
-- `gulp deploy`: recompile stylesheets, create theme `.zip`, and uses `gscan` to validate
+- `gulp deploy`: recompile everything, create `.zip` for production and uses `gscan` to validate.
 
-- To run ghost: `ghost start`, `ghost restart`, or `ghost run [session-name] --development` for logs
+- To run Ghost: `ghost start`, `ghost restart`, or `ghost run [session-name] --development` for logs
 
 ## Setup
 
@@ -179,6 +179,8 @@ To change the theme, follow the instructions in `assets/css/highlight.scss`.
 - [Bulma](https://bulma.io/)
 - [SCSS](https://sass-lang.com/guide)
 - [Handlebars](https://handlebarsjs.com/)
+- [Gulp](https://gulpjs.com/)
+- [Highlight.js](https://highlightjs.org)
 
 #### Templates
 

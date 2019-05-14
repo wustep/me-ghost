@@ -35,12 +35,29 @@
 
 /* Post Cards */
 
-.posts-card-row {
-  padding: 0;
+.tile.is-ancestor {
+  /* We're undoing some Bulma spacing styles and doing it ourselves */
+  margin: 0;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .tile.is-parent {
+    padding: 0;
+  }
 }
 
-.post-tile {
-  padding: 10px;
+.posts-card-row {
+  margin-bottom: 1.5rem;
+
+  .post-tile {
+    &:not(:last-child) {
+      @include tablet {
+        padding-right: 1.5rem;
+      }
+    }
+  }
 }
 
 .post-card {
