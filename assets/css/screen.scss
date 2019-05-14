@@ -263,13 +263,19 @@
   }
 
   .kg-embed-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
+    position: relative;
+    padding-top: 30px;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    margin-bottom: 1.5em;
 
-    .fluid-width-video-wrapper {
-      margin: 0;
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
     }
   }
 
