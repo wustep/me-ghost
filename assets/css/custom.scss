@@ -1,8 +1,10 @@
 /* Custom wustep.me styling */
 
 iframe {
-  /* Fix iframe for Typeform */
-  height: 100%;
+  [data-qa="iframe"] {
+    /* Fix iframe for Typeform */
+    height: 100%;
+  }
 }
 
 /* HACK: Hide day in post-card for Project and Notes */
