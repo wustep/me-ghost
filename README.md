@@ -66,7 +66,6 @@
 - Subscribe modal
   - ✔️ Set up modal and form
   - Set up form action and errors
-  - (Using Typeform subscribe form instead)
 - Multi-author byline support
 - Proper RSS feeds
 - Fork into generic Bulma + Ghost theme
@@ -148,11 +147,12 @@ Edit the button to use Bulma, with class `button` and `is-success` (or [another 
 Example:
 
 ```
-<a class="typeform-share button is-success" href="https://wustep.typeform.com/to/LR3jOI" data-mode="popup" target="_blank">Contact Me</a>
+<a class="typeform-share button is-success" ...>Contact Me</a>
 ```
 
 #### Subscribe button
 
+(This isn't completed yet! In the meantime, you can use Typeform forms.)
 Add a subscribe button somewhere with classes `subscribe-button button is-primary`.
 
 ```
