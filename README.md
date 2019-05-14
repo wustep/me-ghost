@@ -15,18 +15,15 @@
   - ✔️ Set `/projects` to route to `/tags/projects`
   - ✔️ Projects will be loaded by creation date desc
   - ✔️ Projects are routed to `/projects/{slug}`
-  - Loads `featured` projects first
   - ✔️ Hide day for datetime published
 - ✔️ Articles
   - ✔️ These should be posts tagged `Articles` first
   - ✔️ Articles will be loaded by creation date desc
   - ✔️ Articles are routed to `/articles/{slug}`
-  - Loads `featured` first
 - ✔️ Notes
   - ✔️ These should be posts tagged `Notes` first
   - ✔️ Notes will be loaded by creation date desc
   - ✔️ Notes are routed to `/articles/{slug}`
-  - Loads `featured` first
   - ✔️ Hide day for datetime published
 - ✔️ Posts that are not primarily tagged `Articles` or `Projects` or `Notes` will be routed to `/`
 - ✔️ Dynamic navigation bar
@@ -37,14 +34,15 @@
   - ✔️ Facebook, Twitter, GitHub, and LinkedIn will add icons
 - ✔️ Tags category pages: `/tag/[tag]` and author page: `/author/[author]`
 - ✔️ Dedicated post webpages
-  - Proper formatting--match editor styles
-    - ✔️ Headings, links, paragraphs, bold, italics, blockquotes, bullets, code blocks
-    - Images, responsive feature images
+  - ✔️ Proper formatting--match editor styles
+    - ✔️ Headings, links, paragraphs, bold, italics, blockquotes, bullets, code blocks, images, galleries
+    - Videos / embeds
   - ✔️ Author byline with icon, name, and bio
     - ✔️ Links to author's website
 - ✔️ Post Cards (loop)
   - ✔️ with title, excerpt, tags
   - ✔️ (These will not have feature images)
+  - Loads `featured` first
   - Use package.json property `posts-per-page` with pagination
     - ([Ran into some issues with pagination related to #get](https://github.com/TryGhost/Ghost/issues/9011))
 - ✔️ Custom 404 page with 404-porcupine
