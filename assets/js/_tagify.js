@@ -9,7 +9,9 @@ Turn "[##!TagName]" with the same treatment with anchor link
 Turn "[#TagName]" into span.tag with #TagName is-secondary-label
 Turn "[##TagName or #TagName]: Description" into span with tag-description
 Turn "<p>[#TagName] ... [#TagName]</p>" into p with tag-collection
- */
+
+Also: buttonify links like [!<a>Button Text</a>] to turn them into Bulma buttons.
+*/
 $(document).ready(function() {
   var collectionRegex = new RegExp(/<p>[ \t]*\[#(.*?)\][ \t]*<\/p>/, "g");
   var collectionReplace = '<p class="label-collection">[#$1]</p>';
@@ -39,12 +41,16 @@ $(document).ready(function() {
   var secondaryRegex = new RegExp(/\[#(.*?)\]/, "g");
   var secondaryReplace = '<span class="tag is-secondary-label">#$1</span>';
 
+  var buttonRegex = new RegExp(/\[!<a(.*?)>(.*?)<\/a>\]/, "g");
+  var buttonReplace = '<a class="button is-primary" $1>$2</a>';
+
   $(".post-content, .page-content").html(function(i, html) {
     return html
       .replace(collectionRegex, collectionReplace)
       .replace(instructionRegex, instructionReplace)
       .replace(primaryWithLinkRegex, primaryWithLinkReplace)
       .replace(primaryRegex, primaryReplace)
-      .replace(secondaryRegex, secondaryReplace);
+      .replace(secondaryRegex, secondaryReplace)
+      .replace(buttonRegex, buttonReplace);
   });
 });
