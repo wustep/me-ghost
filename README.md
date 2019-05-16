@@ -5,25 +5,24 @@
 ## Features
 
 - ✔️ Home page
-  - ✔️ Content is used from page with URL `home`
-  - ✔️ Projects are tagged `Projects`
-  - ✔️ Articles are tagged `Articles`
+  - ✔️ Content card from page with URL `home`
+  - ✔️ Add 2 most recent Articles, Projects, and Notes
   - ✔️ "Read More" buttons linking to pages
-  - ✔️ Uses 2 most recent projects and articles
+- ✔️ Articles
+  - ✔️ These should be posts tagged `Articles` first
+  - ✔️ Articles will be loaded by creation date desc
+  - ✔️ Articles are routed to `/articles/{slug}`
 - ✔️ Projects
   - ✔️ These should be posts tagged `Projects` first
   - ✔️ Set `/projects` to route to `/tags/projects`
   - ✔️ Projects will be loaded by creation date desc
   - ✔️ Projects are routed to `/projects/{slug}`
   - ✔️ Hide day for datetime published
-- ✔️ Articles
-  - ✔️ These should be posts tagged `Articles` first
-  - ✔️ Articles will be loaded by creation date desc
-  - ✔️ Articles are routed to `/articles/{slug}`
 - ✔️ Notes
   - ✔️ These should be posts tagged `Notes` first
+  - ✔️ Set `/notes` to route to `/tags/notes`
   - ✔️ Notes will be loaded by creation date desc
-  - ✔️ Notes are routed to `/articles/{slug}`
+  - ✔️ Notes are routed to `/notes/{slug}`
   - ✔️ Hide day for datetime published
 - ✔️ Posts that are not primarily tagged `Articles` or `Projects` or `Notes` will be routed to `/`
 - ✔️ Dynamic navigation bar
@@ -90,10 +89,10 @@
 
 1. Under **Settings -> Navigation**: add:
 
-```
+```javascript
 Home -> /
-Projects -> /projects/
 Articles -> /articles/
+Projects -> /projects/
 Notes -> /notes/
 (optional)
 LinkedIn, Twitter, GitHub, Facebook
@@ -113,7 +112,7 @@ This is used for the navigation bar, to have `Home`, `Projects`, and `Articles` 
 
 - In `has.js`, add `label` to `validAttrs` and add to `checks` object (line 140ish):
 
-```
+```javascript
 label: function() {
   return (
     (attrs.label && evaluateTagList(attrs.label, [self.label], true)) ||
@@ -146,7 +145,7 @@ Edit the button to use Bulma, with class `button` and `is-success` (or [another 
 
 Example:
 
-```
+```html
 <a class="typeform-share button is-success" ...>Contact Me</a>
 ```
 
@@ -155,8 +154,13 @@ Example:
 (This isn't completed yet! In the meantime, you can use Typeform forms.)
 Add a subscribe button somewhere with classes `subscribe-button button is-primary`.
 
-```
-<a class="button subscribe-button is-primary" data-target="subscribe-modal" href="#subscribe">Subscribe</a>
+```html
+<a
+  class="button subscribe-button is-primary"
+  data-target="subscribe-modal"
+  href="#subscribe"
+  >Subscribe</a
+>
 ```
 
 #### Syntax highlighting

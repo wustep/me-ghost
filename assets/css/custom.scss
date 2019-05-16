@@ -1,7 +1,7 @@
 /* Custom wustep.me styling */
 
 iframe {
-  [data-qa="iframe"] {
+  &[data-qa="iframe"] {
     /* Fix iframe for Typeform */
     height: 100%;
   }

@@ -1,6 +1,6 @@
 {{#if internal}}
   {{#foreach navigation}}
-    {{#has label="Home, Projects, Articles, Notes"}}
+    {{#has label="Home, Articles, Projects, Notes"}}
       <a class="navbar-item nav-{{slug}}{{#if current}} is-active{{/if}}" href="{{url absolute="true"}}">
         {{label}}
       </a>
@@ -8,7 +8,7 @@
   {{/foreach}}
 {{else}}
   {{#foreach navigation}}
-    {{^has label="Home, Projects, Articles, Notes"}}
+    {{^has label="Home, Articles, Projects, Notes"}}
       <a class="navbar-item nav-{{slug}}" href="{{url absolute="true"}}">
         {{#has label="Facebook"}}
           {{> icons/facebook}}

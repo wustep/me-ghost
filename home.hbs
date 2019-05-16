@@ -10,6 +10,13 @@
   </div><br>
   {{/page}}
 
+  {{#get "posts" filter="tag:articles" limit=2}}
+    <h1 class="title">Articles</h1>
+    {{> "post-card-loop"}}
+    <a class="button is-link" href="articles">Read More</a>
+    <hr>
+  {{/get}}
+
   {{#get "posts" filter="tag:projects" limit=2}}
     <h1 class="title">Projects</h1>
     {{> "post-card-loop"}}
@@ -17,10 +24,10 @@
     <hr>
   {{/get}}
 
-  {{#get "posts" filter="tag:articles" limit=2}}
-    <h1 class="title">Articles</h1>
+  {{#get "posts" filter="tag:notes" limit=2}}
+    <h1 class="title">Notes</h1>
     {{> "post-card-loop"}}
-    <a class="button is-link" href="articles">Read More</a>
+    <a class="button is-link" href="notes">Read More</a>
   {{/get}}
 
 </div>
