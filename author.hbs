@@ -19,10 +19,9 @@
         {{/if}}
       {{/if}}
     </h2>
-  </center>
-  <br>
-
-  {{#get "posts" filter="author:{{slug}}"}}
+  </center><br>
+  
+  {{#get "posts" filter="authors:[{{slug}}]"}}
     {{> "post-card-loop"}}
   {{/get}}
 </div>

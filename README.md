@@ -45,6 +45,8 @@
   - Use package.json property `posts-per-page` with pagination
     - ([Ran into some issues with pagination related to #get](https://github.com/TryGhost/Ghost/issues/9011))
 - ✔️ Custom 404 page with 404-porcupine
+- ✔️ Commenting with [Commento](https://commento.io/)
+- ✔️ Claps with [Applause](https://applause-button.com/)
 - ✔️ Additional scripts:
   - ✔️ Add [jQuery v3.4](https://jquery.com/) via CDN
   - ✔️ [Syntax highlighting](https://github.com/highlightjs/highlight.js/blob/master/README.md) for programming code blocks with Highlight.js
@@ -110,7 +112,7 @@ Some minor mods were made to the Ghost code, particularly:
 
 This is used for the navigation bar, to have `Home`, `Projects`, and `Articles` be on the left-aligned and any other link to be right-aligned.
 
-- In `has.js`, add `label` to `validAttrs` and add to `checks` object (line 140ish):
+- In ghost folder: `core/server/helpers/has.js`, add `label` to `validAttrs` and add to `checks` object (line 140ish):
 
 ```javascript
 label: function() {
@@ -127,9 +129,32 @@ Routes were modified to change `tag/projects` -> `projects`, `tag/articles` -> `
 
 - Replace your `content/settings/routes.yaml` with the `routes.yaml` in this repository, modifying as desired.
 
-#### 3. (Optional) Change excerpt algorithm
+#### 3. Add `use-commento` and `use-applause` config properties.
 
-Automatic excerpts, by default, tend to be a poor result and concatenate multiple lines together without proper spacing. Optionally, revise the `excerpt` code to catch only the first `<p>` block instead of carrying on.
+We added two config properties to let users enable or disable [commento](https://commento.io/) / [applause](https://applause-button.com/). Edit `package.json` if you want these enabled or disabled.
+
+You can also [host your own server of Applause](https://github.com/ColinEberhardt/applause-button-server) and [Commento](https://docs.commento.io/getting-started/self-hosting/).
+
+- In ghost folder: `core/server/services/themes/config/index.js`.
+
+Add `use-commento` and `use-applause` to `allowedKeys`.
+
+- In ghost folder: `core/server/services/themes/middleware.js`
+
+Add `use-commento` and `use-applause` to `updateGlobalTemplateOptions` in same format.
+
+```javascript
+const themeData = {
+  posts_per_page: activeTheme.get().config("posts_per_page"),
+  image_sizes: activeTheme.get().config("image_sizes"),
+  use_commento: activeTheme.get().config("use_commento"),
+  use_applause: activeTheme.get().config("use_applause")
+};
+```
+
+#### 4. (Optional) Change excerpt algorithm
+
+TODO: Automatic excerpts, by default, tend to be a poor result and concatenate multiple lines together without proper spacing. Optionally, revise the `excerpt` code to catch only the first `<p>` block instead of carrying on.
 
 ### Other Optional Changes
 
@@ -183,6 +208,8 @@ To change the theme, follow the instructions in `assets/css/highlight.scss`.
 - [Handlebars](https://handlebarsjs.com/)
 - [Gulp](https://gulpjs.com/)
 - [Highlight.js](https://highlightjs.org)
+- [Applause Button](https://applause-button.com/)
+- [Commento](https://commento.io/)
 
 #### Templates
 

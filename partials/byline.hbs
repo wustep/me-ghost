@@ -15,6 +15,12 @@
       {{/if}}
     </div>
   </div>
+
+  {{#if @config.use_applause}}
+  <div class="media-right">
+    <applause-button url="{{@site.url}}/{{slug}}" style="width: 58px; height: 58px;"/>
+  </div>
+  {{/if}}
 </section>
 
 {{/primary_author}}
