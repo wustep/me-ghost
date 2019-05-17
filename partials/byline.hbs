@@ -1,26 +1,27 @@
-{{#primary_author}}
 
 <section class="media author-card">
-  <figure class="media-left">
-    {{> "author-avatar"}}
-  </figure>
+  {{#primary_author}}
+    <figure class="media-left">
+      {{> "author-avatar"}}
+    </figure>
 
-  <div class="media-content">
-    <div class="content">
-      <h4 class="author-card-name">{{name}}</h4>
-      {{#if bio}}
-          {{bio}}
-      {{else}}
-          Read <a href="{{url}}">more posts</a> by this author.
-      {{/if}}
+    <div class="media-content">
+      <div class="content">
+        <h4 class="author-card-name">{{name}}</h4>
+        {{#if bio}}
+            {{bio}}
+        {{else}}
+            Read <a href="{{url}}">more posts</a> by this author.
+        {{/if}}
+      </div>
     </div>
-  </div>
 
-  {{#if @config.use_applause}}
-  <div class="media-right">
-    <applause-button url="{{@site.url}}/{{slug}}" style="width: 58px; height: 58px;"/>
-  </div>
-  {{/if}}
+  {{/primary_author}}
+  {{#is "post"}}
+    {{#if @config.use_applause}}
+    <div class="media-right">
+      <applause-button url="{{@site.url}}{{url}}" style="width: 58px; height: 58px;"/>
+    </div>
+    {{/if}}
+  {{/is}}
 </section>
-
-{{/primary_author}}

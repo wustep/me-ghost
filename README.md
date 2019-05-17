@@ -104,6 +104,8 @@ LinkedIn, Twitter, GitHub, Facebook
 
 4. Write **posts** that are tagged `Projects`, `Articles`, or `Notes`!
 
+5. Set up [Commento](https://commento.io/) account for comments.
+
 ### Modifications to Ghost
 
 Some minor mods were made to the Ghost code, particularly:
@@ -132,8 +134,6 @@ Routes were modified to change `tag/projects` -> `projects`, `tag/articles` -> `
 #### 3. Add `use-commento` and `use-applause` config properties.
 
 We added two config properties to let users enable or disable [commento](https://commento.io/) / [applause](https://applause-button.com/). Edit `package.json` if you want these enabled or disabled.
-
-You can also [host your own server of Applause](https://github.com/ColinEberhardt/applause-button-server) and [Commento](https://docs.commento.io/getting-started/self-hosting/).
 
 - In ghost folder: `core/server/services/themes/config/index.js`.
 
@@ -188,7 +188,7 @@ Add a subscribe button somewhere with classes `subscribe-button button is-primar
 >
 ```
 
-#### Syntax highlighting
+#### Syntax highlighting changes
 
 I added syntax highlighting through `highlight.js` for a limited number of languages that I felt I might use (including `[JavaScript, Python, Java, SQL, JSON, Markdown, HTTP, CSS, SCSS, ...]`).
 
@@ -197,6 +197,10 @@ I excluded many common ones, like `[C#, C++, Ruby, Makefiles, Apache]`, and ther
 If you'd like to replace this library, [build your own package at highlightjs.org](https://highlightjs.org/download/) and replace `assets/lib/highlight.pack.js`.
 
 To change the theme, follow the instructions in `assets/css/highlight.scss`.
+
+#### Host Applause or Commento
+
+You can choose to [host your own server of Applause](https://github.com/ColinEberhardt/applause-button-server) and [Commento](https://docs.commento.io/getting-started/self-hosting/).
 
 ## Resources
 
