@@ -31,7 +31,13 @@
       <script src="https://unpkg.com/applause-button/dist/applause-button.js"></script>
     {{/if}}
     {{#if @config.use_commento}}
-      <script src="https://cdn.commento.io/js/commento.js"></script>
+      <script src="https://cdn.commento.io/js/commento.js" data-auto-init="false"></script>
+      <script>
+        if (!window.disableCommento) {
+          $("#commento").append("<hr/>");
+          window.commento.main();
+        }
+      </script>
     {{/if}}
     <script src="{{asset "lib/highlight.pack.js"}}"></script>
     <script src="{{asset "built/app.js"}}"></script>

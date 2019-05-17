@@ -46,7 +46,10 @@
     - ([Ran into some issues with pagination related to #get](https://github.com/TryGhost/Ghost/issues/9011))
 - ✔️ Custom 404 page with 404-porcupine
 - ✔️ Commenting with [Commento](https://commento.io/)
+  - ✔️ Disable on any post by setting `window.disableCommento` to `true` in Code Injection
+  - Resyle to be more Bulma-like
 - ✔️ Claps with [Applause](https://applause-button.com/)
+  - Disable on any page by setting `window.disableApplause` to `true`
 - ✔️ Additional scripts:
   - ✔️ Add [jQuery v3.4](https://jquery.com/) via CDN
   - ✔️ [Syntax highlighting](https://github.com/highlightjs/highlight.js/blob/master/README.md) for programming code blocks with Highlight.js
@@ -141,7 +144,7 @@ Add `use-commento` and `use-applause` to `allowedKeys`.
 
 - In ghost folder: `core/server/services/themes/middleware.js`
 
-Add `use-commento` and `use-applause` to `updateGlobalTemplateOptions` in same format.
+Add `use-commento` and `use-applause` to `updateGlobalTemplateOptions` in same format:
 
 ```javascript
 const themeData = {
@@ -177,7 +180,7 @@ Example:
 #### Subscribe button
 
 (This isn't completed yet! In the meantime, you can use Typeform forms.)
-Add a subscribe button somewhere with classes `subscribe-button button is-primary`.
+Add a subscribe button somewhere with classes `subscribe-button button is-primary`:
 
 ```html
 <a
@@ -201,6 +204,16 @@ To change the theme, follow the instructions in `assets/css/highlight.scss`.
 #### Host Applause or Commento
 
 You can choose to [host your own server of Applause](https://github.com/ColinEberhardt/applause-button-server) and [Commento](https://docs.commento.io/getting-started/self-hosting/).
+
+#### Hide Commento
+
+To hide comments on any post, use `window.disableCommento` via Code Injection to `{{ghost_foot}}` in the Ghost panel:
+
+```html
+<script>
+  window.disableCommento = true;
+</script>
+```
 
 ## Resources
 
