@@ -1,0 +1,85 @@
+/*
+Special styling for Commento comments.
+
+- Fix code color and padding set by Bulma
+- Add <hr>-like syling above Login container.
+- (TODO: This isn't totally aligned yet.)
+*/
+
+#commento {
+  /* Add <hr> styling above login/logout */
+  margin-bottom: 1em;
+
+  #commento-logged-container {
+    padding-top: 2em;
+    margin: 2em 0 3.5em;
+    border-top: 2px solid $hr-background-color;
+
+    .commento-logout {
+      right: 0;
+      margin-top: 3px;
+      margin-right: 16px;
+      text-align: right;
+      position: relative;
+    }
+  }
+
+  #commento-login {
+    &:not(:empty) {
+      padding-top: 2em;
+      margin-top: 2em;
+      border-top: 2px solid $hr-background-color;
+    }
+  }
+
+  /* Fix overflow on error box */
+
+  .commento-error-box {
+    height: unset;
+    margin: 1.5em 0 0.75em;
+  }
+
+  /* Fix & improve code block styling */
+
+  pre,
+  code {
+    padding: unset;
+    background-color: $white-ter;
+    display: inline-block;
+    background: #282c34;
+    color: #abb2bf;
+    border-radius: 3px;
+  }
+
+  .commento-body {
+    pre,
+    code {
+      padding: 0 5px 2px;
+    }
+  }
+
+  /* Remove Edit button for now */
+
+  .commento-option-remove {
+    margin-right: -26px;
+  }
+
+  .commento-option-edit {
+    display: none;
+  }
+
+  /* Disable Google+ Links */
+
+  .commento-name {
+    &[href^="https://plus.google"] {
+      pointer-events: none;
+      cursor: default;
+    }
+  }
+
+  /* Hide logo */
+
+  #commento-footer {
+    display: none;
+  }
+}

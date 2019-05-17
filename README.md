@@ -47,7 +47,8 @@
 - ✔️ Custom 404 page with 404-porcupine
 - ✔️ Commenting with [Commento](https://commento.io/)
   - ✔️ Disable on any post by setting `window.disableCommento` to `true` in Code Injection
-  - Resyle to be more Bulma-like
+  - Restyle to be more Bulma-like
+  - Add syntax highlighting?
 - ✔️ Claps with [Applause](https://applause-button.com/)
   - Disable on any page by setting `window.disableApplause` to `true`
 - ✔️ Additional scripts:
@@ -187,8 +188,9 @@ Add a subscribe button somewhere with classes `subscribe-button button is-primar
   class="button subscribe-button is-primary"
   data-target="subscribe-modal"
   href="#subscribe"
-  >Subscribe</a
 >
+  Subscribe
+</a>
 ```
 
 #### Syntax highlighting changes

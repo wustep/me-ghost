@@ -8,6 +8,7 @@ files:
     - "assets/css/*.scss"
   ignore:
     - "assets/css/highlight.scss"
+    - "assets/css/commento.scss"
 
 options:
   formatter: stylish
