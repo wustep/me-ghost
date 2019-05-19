@@ -337,36 +337,48 @@
   }
 }
 
-.author-card {
-  .avatar-wrapper {
-    svg {
-      border-radius: 50%;
-      background-color: $black;
-    }
-  }
+.post-footer {
+  margin-top: 1em;
+  // Weirdly, this stretches right on mobile way more than it should...
+  overflow-x: hidden;
 
-  .media-content {
-    .author-card-name {
-      margin-bottom: 0.2em;
-    }
+  .author-card {
+    margin-top: 2em;
 
-    margin: auto 1em;
-  }
-
-  @include mobile {
-    display: block;
-
-    .author-image-container {
-      margin: 0 auto;
+    .avatar-wrapper {
+      svg {
+        border-radius: 50%;
+        background-color: $black;
+      }
     }
 
-    .author-media {
-      text-align: center;
-      margin: 0 0 1em;
+    .media-content {
+      .author-card-name {
+        margin-bottom: 0.2em;
+      }
+
+      margin: auto 1em;
     }
 
-    applause-button {
-      margin: 1em auto;
+    @include mobile {
+      display: block;
+
+      .author-image-container {
+        margin: 0 auto;
+      }
+
+      .author-media {
+        text-align: center;
+        margin: 0 0 1em;
+      }
+
+      .media-right {
+        padding-bottom: 1em;
+      }
+
+      applause-button {
+        margin: 1em auto 2em;
+      }
     }
   }
 }
@@ -398,15 +410,5 @@
   input {
     /* For some reason, this is transparent otherwise */
     border-color: $grey-lighter;
-  }
-}
-
-.post-footer {
-  margin-top: 1em;
-  // Weirdly, this stretches right on mobile way more than it should...
-  overflow-x: hidden;
-
-  .author-card {
-    margin-top: 2em;
   }
 }
