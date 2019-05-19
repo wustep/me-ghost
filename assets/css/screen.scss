@@ -366,7 +366,7 @@
     }
 
     applause-button {
-      margin: 1em auto 0;
+      margin: 1em auto;
     }
   }
 }
@@ -403,6 +403,8 @@
 
 .post-footer {
   margin-top: 1em;
+  // Weirdly, this stretches right on mobile way more than it should...
+  overflow-x: hidden;
 
   .author-card {
     margin-top: 2em;
