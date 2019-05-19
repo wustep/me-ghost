@@ -69,7 +69,10 @@
 }
 
 .posts-card-row {
-  margin-bottom: 1.5rem;
+  @include tablet {
+    margin-bottom: 1.5rem;
+    // Remove for smaller than tablet, since that collapses the rows
+  }
 
   .post-tile {
     &:not(:last-child) {
