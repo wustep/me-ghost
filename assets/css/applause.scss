@@ -36,7 +36,7 @@ Custom Changes for wustep.me:
 applause-button {
   position: relative;
   cursor: pointer;
-  margin: 0 1em 1em 0;
+  margin: 0 1em 2em 0; /* from 0 1em 1em 0 */
 
   .style-root {
     @include position-fill;
