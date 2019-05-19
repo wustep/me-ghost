@@ -33,6 +33,26 @@
   }
 }
 
+/* Section Body */
+
+.section {
+  @include mobile {
+    padding: 0;
+
+    .main-container {
+      padding: 1.5em 1em 2em;
+
+      .box {
+        padding: 0;
+      }
+    }
+
+    .box {
+      box-shadow: none;
+    }
+  }
+}
+
 /* Post Cards */
 
 .tile.is-ancestor {
@@ -97,8 +117,12 @@
 */
 
 .post-container {
+  @include mobile {
+    padding: 0.4em;
+  }
+
   max-width: $post-container-max-width;
-  padding: 1rem;
+  padding: 1em;
 }
 
 .post-header {
@@ -327,6 +351,23 @@
     }
 
     margin: auto 1em;
+  }
+
+  @include mobile {
+    display: block;
+
+    .author-image-container {
+      margin: 0 auto;
+    }
+
+    .author-media {
+      text-align: center;
+      margin: 0 0 1em;
+    }
+
+    applause-button {
+      margin: 1em auto 0;
+    }
   }
 }
 

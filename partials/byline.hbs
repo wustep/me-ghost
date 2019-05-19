@@ -1,11 +1,11 @@
 
 <section class="media author-card">
   {{#primary_author}}
-    <figure class="media-left">
+    <div class="media-left author-media">
       {{> "author-avatar"}}
-    </figure>
+    </div>
 
-    <div class="media-content">
+    <div class="media-content author-media">
       <div class="content">
         <h4 class="author-card-name">{{name}}</h4>
         {{#if bio}}
@@ -19,7 +19,7 @@
   {{/primary_author}}
   {{#is "post"}}
     {{#if @config.use_applause}}
-    <div class="media-right">
+    <div class="media-right author-media">
       <applause-button url="{{@site.url}}{{url}}" style="width: 58px; height: 58px;"/>
     </div>
     {{/if}}

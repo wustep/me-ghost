@@ -1,8 +1,7 @@
 {{!< default}}
 
 {{#author}}
-<div class="container">
-
+<div class="container main-container">
   <center>
     {{> "author-avatar" large=true}}<br>
     <h1 class="title">{{name}}</h1>
@@ -20,7 +19,7 @@
       {{/if}}
     </h2>
   </center><br>
-  
+
   {{#get "posts" filter="authors:[{{slug}}]"}}
     {{> "post-card-loop"}}
   {{/get}}
