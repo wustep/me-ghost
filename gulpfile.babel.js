@@ -146,4 +146,4 @@ gulp.task(
   gulp.watch(paths.js, gulp.series("js", "jshint"))
 );
 
-gulp.task("deploy", callback => run("sass", "zip", "scan", callback));
+gulp.task("deploy", gulp.series("sass", "zip", "scan"));
