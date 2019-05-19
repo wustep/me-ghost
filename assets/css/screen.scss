@@ -279,6 +279,11 @@
   }
 
   .kg-width-full {
+    @include mobile {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
     position: relative;
     /* Use Bulma's section padding to cover box */
     width: 100vw;
