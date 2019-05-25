@@ -45,7 +45,7 @@ $(document).ready(function() {
   var buttonReplace = '<a class="button is-primary" $1>$2</a>';
 
   var buttonWithClassesRegex = new RegExp(
-    /\[!\((.+)\)<a(.*?)>(.*?)<\/a>\]/,
+    /\[!\((.*?)\)<a(.*?)>(.*?)<\/a>\]/,
     "g"
   );
   var buttonWithClassesReplace = '<a class="button $1" $2>$3</a>';
