@@ -9,8 +9,8 @@ Turn "[##!TagName]" with the same treatment with anchor link
 Turn "[#TagName]" into span.tag with #TagName is-secondary-label
 Turn "[##TagName or #TagName]: Description" into span with tag-description
 Turn "<p>[#TagName] ... [#TagName]</p>" into p with tag-collection
-
-Also: buttonify links like [!<a>Button Text</a>] to turn them into Bulma buttons.
+Turn "[!<a>Button Text</a>]" into a button with is-primary.
+Turn "[!(classes)<a>Button Text</a>]" into a button with is-primary and classes
 */
 $(document).ready(function() {
   var collectionRegex = new RegExp(/<p>[ \t]*\[#(.*?)\][ \t]*<\/p>/, "g");
@@ -44,6 +44,12 @@ $(document).ready(function() {
   var buttonRegex = new RegExp(/\[!<a(.*?)>(.*?)<\/a>\]/, "g");
   var buttonReplace = '<a class="button is-primary" $1>$2</a>';
 
+  var buttonWithClassesRegex = new RegExp(
+    /\[!\((.+)\)<a(.*?)>(.*?)<\/a>\]/,
+    "g"
+  );
+  var buttonWithClassesReplace = '<a class="button $1" $2>$3</a>';
+
   $(".post-content, .page-content").html(function(i, html) {
     return html
       .replace(collectionRegex, collectionReplace)
@@ -51,6 +57,7 @@ $(document).ready(function() {
       .replace(primaryWithLinkRegex, primaryWithLinkReplace)
       .replace(primaryRegex, primaryReplace)
       .replace(secondaryRegex, secondaryReplace)
-      .replace(buttonRegex, buttonReplace);
+      .replace(buttonRegex, buttonReplace)
+      .replace(buttonWithClassesRegex, buttonWithClassesReplace);
   });
 });

@@ -55,11 +55,13 @@
   - ✔️ Add [jQuery v3.4](https://jquery.com/) via CDN
   - ✔️ [Syntax highlighting](https://github.com/highlightjs/highlight.js/blob/master/README.md) for programming code blocks with Highlight.js
   - ✔️ Convert external links to open in new tab
-  - ✔️ Tagify [#Tags] with Bulma tags
-    - ✔️ "[##TagName]" will be turned into dark tags of #TagName with `.is-primary-label`
-    - ✔️ "[##!TagName]" will get the same treatment but with anchor link
-    - ✔️ "[#TagName]" will be turned into grey tags of #TagName with `.is-secondary-label`
-    - ✔️ Lines that start and end in tags will be given `.label-collection`
+  - ✔️ Tagify [#Tags] and [!Buttons] with Bulma tags and buttons
+    - ✔️ `[##TagName]` will be turned into dark tags of #TagName with `.is-primary-label`
+    - ✔️ `[##!TagName]` will get the same treatment but with anchor link
+    - ✔️ `[#TagName]` will be turned into grey tags of #TagName with `.is-secondary-label`
+    - ✔️ Lines that start and end in `[#Tags]` will be given `.label-collection`
+    - ✔️ `[!<a href...>Button Text</a>]` will be given `a.button.is-primary`
+    - ✔️ `[!(classes)<a href...>Button Text</a>]` will be given `a.button` with space-separated `classes`
 - ✔️ Build tools:
   - ✔️ `gulp` for development and `gulp deploy` for deployment
   - ✔️ Compile SCSS to CSS
@@ -156,17 +158,33 @@ const themeData = {
 };
 ```
 
-#### 4. (Optional) Change excerpt algorithm
+#### 4. Hide RSS feed.
+
+At the moment, RSS feeds are not populated properly. By default, Ghost adds a feed to the `<head>` tag.
+
+To remove it, go to `core/server/helpers/ghost_head.js` and comment out the lines:
+
+```javascript
+head.push(
+  '<link rel="alternate" type="application/rss+xml" title="' +
+    escapeExpression(metaData.blog.title) +
+    '" href="' +
+    escapeExpression(metaData.rssUrl) +
+    '" />'
+);
+```
+
+#### 5. (Optional) Change excerpt algorithm
 
 TODO: Automatic excerpts, by default, tend to be a poor result and concatenate multiple lines together without proper spacing. Optionally, revise the `excerpt` code to catch only the first `<p>` block instead of carrying on.
 
 ### Other Optional Changes
 
-#### Add more internal pages
+#### 1. Add more internal pages
 
 By default, only "Home", "Projects", "Articles", and "Ideas" are in the left side of the nav. To add more internal pages to the nav bar, edit `partials/navigation.hbs` and make sure the new label is listed in the `#has` and `^has` statements.
 
-#### Contact button
+#### 2. Contact button
 
 Use a service like Typeform to add a "Contact" button to the `home` page.
 
@@ -178,7 +196,7 @@ Example:
 <a class="typeform-share button is-success" ...>Contact Me</a>
 ```
 
-#### Subscribe button
+#### 3. Subscribe button
 
 (This isn't completed yet! In the meantime, you can use Typeform forms.)
 Add a subscribe button somewhere with classes `subscribe-button button is-primary`:
@@ -193,7 +211,7 @@ Add a subscribe button somewhere with classes `subscribe-button button is-primar
 </a>
 ```
 
-#### Syntax highlighting changes
+#### 4. Syntax highlighting changes
 
 I added syntax highlighting through `highlight.js` for a limited number of languages that I felt I might use (including `[JavaScript, Python, Java, SQL, JSON, Markdown, HTTP, CSS, SCSS, ...]`).
 
@@ -203,11 +221,11 @@ If you'd like to replace this library, [build your own package at highlightjs.or
 
 To change the theme, follow the instructions in `assets/css/highlight.scss`.
 
-#### Host Applause or Commento
+#### 5. Host Applause or Commento
 
 You can choose to [host your own server of Applause](https://github.com/ColinEberhardt/applause-button-server) and [Commento](https://docs.commento.io/getting-started/self-hosting/).
 
-#### Hide Commento
+#### 6. Hide Commento
 
 To hide comments on any post, use `window.disableCommento` via Code Injection to `{{ghost_foot}}` in the Ghost panel:
 
