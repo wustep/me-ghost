@@ -6,6 +6,14 @@ Special styling for Commento comments.
 - (TODO: This isn't totally aligned yet.)
 */
 
+.commento-root {
+  .commento-card {
+    .commento-moderator::after {
+      content: none;
+    }
+  }
+}
+
 #commento {
   /* Add <hr> styling above login/logout */
   margin-bottom: 1em;
