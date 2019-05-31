@@ -8,7 +8,7 @@ Special styling for Commento comments.
 
 .commento-root {
   .commento-card {
-    .commento-moderator::after {
+    .commento-moderator.commento-name::after {
       content: none;
     }
   }
