@@ -144,8 +144,12 @@
   flex-direction: column;
 
   p:first-child {
-    font-size: 1.25em;
+    font-size: 1.15em;
     line-height: 1.5em;
+  }
+
+  p + hr {
+    margin-top: 0;
   }
 
   p:not([class]),
