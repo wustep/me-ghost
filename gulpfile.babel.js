@@ -33,17 +33,17 @@ const paths = {
   scssApp: "./assets/css/app.scss",
   js: "./assets/js/**/*.js",
   jsBuilt: "app.js",
-  built: "./assets/built/"
+  built: "./assets/built/",
 };
 
 const levels = {
   error: chalk.red,
   warning: chalk.yellow,
   recommendation: chalk.yellow,
-  feature: chalk.green
+  feature: chalk.green,
 };
 
-gulp.task("sass", () =>
+gulp.task("sass", (cb) =>
   gulp
     .src(paths.scssApp)
     .pipe(sourcemaps.init())
@@ -60,9 +60,9 @@ gulp.task("sasslint", () =>
     .pipe(
       sasslint({
         options: {
-          formatter: "stylish"
+          formatter: "stylish",
         },
-        configFile: ".sass-lint.yml"
+        configFile: ".sass-lint.yml",
       })
     )
     .pipe(sasslint.format())
@@ -79,14 +79,11 @@ gulp.task("js", () =>
     .pipe(gulp.dest(paths.built))
 );
 
-gulp.task("jshint", () =>
-  gulp
-    .src(paths.js)
-    .pipe(jshint())
-    .pipe(jshint.reporter("jshint-stylish"))
+gulp.task("jshint", (cb) =>
+  gulp.src(paths.js).pipe(jshint()).pipe(jshint.reporter("jshint-stylish"))
 );
 
-gulp.task("scan", () => {
+gulp.task("scan", (cb) => {
   function outputResult(result) {
     console.log("-", levels[result.level](result.level), result.rule);
   }
@@ -120,14 +117,14 @@ gulp.task("scan", () => {
         )
       );
     }
-
     console.log("\n...checks complete.");
+    cb();
   }
 
   gscan
     .checkZip({
       path: `./${pkg.name}.zip`,
-      name: pkg.name
+      name: pkg.name,
     })
     .then(outputResults);
 });
